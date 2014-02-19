@@ -124,18 +124,16 @@ namespace BulletFlockBuddy
 
 		public override void Update(GameTime curTime)
 		{
-			//the base class will update all the items
+			//the base class updates the flocking part of the dudes
 			base.Update(curTime);
 
+			//update the bulletboid part of the dude
+			for (int i = 0; i < Bullets.Count; i++)
+			{
+				Bullets[i].Update();
+			}
+
 			FreeBullets();
-		}
-
-		public override void UpdateBoid(Boid dude)
-		{
-			//the base class updates the flocking part of the dude
-			base.Update(dude);
-
-			//TODO: update the bulletboid part of the dude
 		}
 
 		/// <summary>
@@ -147,10 +145,11 @@ namespace BulletFlockBuddy
 			{
 				if (!Bullets[i].Used)
 				{
+					//remove from the flock also
+					Dudes.Remove(Bullets[i].MyBoid);
+
 					//remove from the list of bullets
 					Bullets.Remove(Bullets[i]);
-
-					//TODO: remove from the flock also
 
 					i--;
 				}
