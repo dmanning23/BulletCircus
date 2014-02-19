@@ -42,6 +42,20 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\externals\BulletMLLib\Windows\BulletMLLib.Windows.csproj">
+      <Project>{203274cd-9994-4562-b824-6cf9cae40347}</Project>
+      <Name>BulletMLLib.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\externals\CollisionBuddy\Windows\CollisionBuddy.Windows.csproj">
+      <Project>{e032cf52-88bc-4d76-8e93-3798f5ee5cd2}</Project>
+      <Name>CollisionBuddy.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\externals\FlockBuddy\Windows\FlockBuddy.Windows.csproj">
+      <Project>{d2ac86b5-0baa-4638-8fca-1346f4816475}</Project>
+      <Name>FlockBuddy.Windows</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
