@@ -1,16 +1,19 @@
 ﻿using BulletMLLib;
-using FlockBuddy;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace BulletFlockBuddy
 {
-	class BulletBoidManager : Flock, IBulletManager
+	/// <summary>
+	/// This manager creates simple bullets that use the default BulletML behavior.  
+	/// If you don't really need the flocking functionality, use this dude instead.
+	/// </summary>
+	class SimpleBulletManager : IBulletManager
 	{
 		#region Members
 
-		public List<BulletBoid> Bullets = new List<BulletBoid>();
+		public List<SimpleBullet> Bullets = new List<SimpleBullet>();
 
 		public PositionDelegate GetPlayerPosition;
 
@@ -77,7 +80,7 @@ namespace BulletFlockBuddy
 
 		#endregion //Properties
 
-		public BulletBoidManager(PositionDelegate playerDelegate)
+		public SimpleBulletManager(PositionDelegate playerDelegate)
 		{
 			Debug.Assert(null != playerDelegate);
 			GetPlayerPosition = playerDelegate;
@@ -103,14 +106,11 @@ namespace BulletFlockBuddy
 		public Bullet CreateBullet()
 		{
 			//create the new bullet
-			BulletBoid myBullet = new BulletBoid(this);
+			SimpleBullet myBullet = new SimpleBullet(this);
 
 			//initialize, store in our list, and return the bullet
 			myBullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale);
 			Bullets.Add(myBullet);
-
-			//store the boid too
-			AddDude(myBullet.MyBoid);
 
 			return myBullet;
 		}
@@ -124,11 +124,8 @@ namespace BulletFlockBuddy
 			}
 		}
 
-		public override void Update(GameTime curTime)
+		public void Update()
 		{
-			//the base class updates the flocking part of the dudes
-			base.Update(curTime);
-
 			//update the bulletboid part of the dude
 			for (int i = 0; i < Bullets.Count; i++)
 			{
@@ -147,9 +144,6 @@ namespace BulletFlockBuddy
 			{
 				if (!Bullets[i].Used)
 				{
-					//remove from the flock also
-					Dudes.Remove(Bullets[i].MyBoid);
-
 					//remove from the list of bullets
 					Bullets.Remove(Bullets[i]);
 

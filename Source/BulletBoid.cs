@@ -1,17 +1,12 @@
-﻿using System;
-using Vector2Extensions;
-using CollisionBuddy;
-using System.Collections.Generic;
+﻿using FlockBuddy;
 using Microsoft.Xna.Framework;
-using BulletMLLib;
-using FlockBuddy;
 
 namespace BulletFlockBuddy
 {
 	/// <summary>
 	/// This class wraps up BulletMLLib.Bullet with the FlockBuddy.Boid and CollisionBuddy.Circle
 	/// </summary>
-	class BulletBoid : Bullet
+	class BulletBoid : SimpleBullet
 	{
 		#region Members
 
@@ -20,40 +15,9 @@ namespace BulletFlockBuddy
 		/// </summary>
 		public Boid MyBoid { get; private set; }
 
-		/// <summary>
-		/// THe physics data for this guy
-		/// </summary>
-		public Circle Physics { get; private set; }
-
-		/// <summary>
-		/// The poisition of this bullet.
-		/// </summary>
-		public Vector2 _position = Vector2.Zero;
-
 		private BulletBoidManager BulletBoidManager { get; set; }
 
 		#endregion //Members
-
-		#region Properties
-
-		/// <summary>
-		/// Whether or not this dude is still valid, or should be removed from the game
-		/// </summary>
-		public bool Used { get; set; }
-
-		public override float X
-		{
-			get { return _position.X; }
-			set { _position.X = value; }
-		}
-
-		public override float Y
-		{
-			get { return _position.Y; }
-			set { _position.Y = value; }
-		}
-		
-		#endregion //Properties
 
 		#region Methods
 
@@ -73,28 +37,10 @@ namespace BulletFlockBuddy
 			float speed,
 			float bulletmlScale)
 		{
-			Used = true;
-
-			//set timespeed
-			TimeSpeed = 1.0f;
-
-			//set scale
-			Scale = bulletmlScale;
-
-			//set the position of the bullet
-			_position = pos;
-
-			//set the orientation of the bullet
-			Direction = dir.Angle();
-
-			//set the speed of the bullet
-			Speed = speed;
+			base.Init(pos, radius, dir, speed, bulletmlScale);
 
 			//create the boid
 			MyBoid = new Boid(BulletBoidManager, pos, radius, dir, speed, 1.0f, 500.0f, 1.0f, 100.0f);
-
-			//create the physics data with 
-			Physics = new Circle(pos, radius);
 		}
 
 		public override void Update()

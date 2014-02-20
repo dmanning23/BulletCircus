@@ -45,8 +45,11 @@
     <Compile Include="..\Source\BulletBoidManager.cs">
       <Link>BulletBoidManager.cs</Link>
     </Compile>
-    <Compile Include="..\Source\Myship.cs">
-      <Link>Myship.cs</Link>
+    <Compile Include="..\Source\SimpleBullet.cs">
+      <Link>SimpleBullet.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\SimpleBulletManager.cs">
+      <Link>SimpleBulletManager.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
