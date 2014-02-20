@@ -70,6 +70,12 @@ namespace BulletFlockBuddy
 			}
 		}
 
+		public Vector2 StartPosition { get; set; }
+
+		public Vector2 StartHeading { get; set; }
+
+		public float StartSpeed { get; set; }
+
 		#endregion //Properties
 
 		public BulletBoidManager(PositionDelegate playerDelegate)
@@ -98,19 +104,16 @@ namespace BulletFlockBuddy
 		public Bullet CreateBullet()
 		{
 			//create the new bullet
-			BulletBoid mover = new BulletBoid(this);
-
-			//set the speed and scale of the bullet
-			mover.TimeSpeed = TimeSpeed;
-			mover.Scale = Scale;
+			BulletBoid myBullet = new BulletBoid(this);
 
 			//initialize, store in our list, and return the bullet
-			mover.Init();
-			Bullets.Add(mover);
+			myBullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale);
+			Bullets.Add(myBullet);
 
-			//TODO: store the boid too
+			//store the boid too
+			AddDude(myBullet.MyBoid);
 
-			return mover;
+			return myBullet;
 		}
 		
 		public void RemoveBullet(Bullet deadBullet)

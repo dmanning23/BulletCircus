@@ -1,4 +1,5 @@
 ﻿using System;
+using Vector2Extensions;
 using CollisionBuddy;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
@@ -27,7 +28,9 @@ namespace BulletFlockBuddy
 		/// <summary>
 		/// The poisition of this bullet.
 		/// </summary>
-		public Vector2 pos;
+		public Vector2 _position = Vector2.Zero;
+
+		private BulletBoidManager BulletBoidManager { get; set; }
 
 		#endregion //Members
 
@@ -40,14 +43,14 @@ namespace BulletFlockBuddy
 
 		public override float X
 		{
-			get { return pos.X; }
-			set { pos.X = value; }
+			get { return _position.X; }
+			set { _position.X = value; }
 		}
 
 		public override float Y
 		{
-			get { return pos.Y; }
-			set { pos.Y = value; }
+			get { return _position.Y; }
+			set { _position.Y = value; }
 		}
 		
 		#endregion //Properties
@@ -60,41 +63,61 @@ namespace BulletFlockBuddy
 		/// <param name="myBulletManager">My bullet manager.</param>
 		public BulletBoid(BulletBoidManager myBulletManager) : base(myBulletManager)
 		{
-			//TODO: store the bulelt boid manager
+			//store the bulelt boid manager
+			BulletBoidManager = myBulletManager;
 		}
 
-		public void Init()
+		public void Init(Vector2 pos,
+			float radius,
+			Vector2 dir,
+			float speed,
+			float bulletmlScale)
 		{
 			Used = true;
 
 			//set timespeed
+			TimeSpeed = 1.0f;
 
 			//set scale
+			Scale = bulletmlScale;
 
-			//TODO: set the position of the bullet
+			//set the position of the bullet
+			_position = pos;
 
-			//TODO: set the orientation of the bullet
+			//set the orientation of the bullet
+			Direction = dir.Angle();
 
-			//TODO: create the boid
+			//set the speed of the bullet
+			Speed = speed;
 
-			//TODO: create the physics data with 
+			//create the boid
+			MyBoid = new Boid(BulletBoidManager, pos, radius, dir, speed, 1.0f, 500.0f, 1.0f, 100.0f);
+
+			//create the physics data with 
+			Physics = new Circle(pos, radius);
 		}
 
 		public override void Update()
 		{
-			//First the boid is updated.  This gives a target heading.
+			//the boid is updated in the mananger update.  that will give a target heading.
 
 			//Next the bullet is updated.  If it uses an "aim" action, it will use the heading from the boid.
+			base.Update();
 
 			//Next the position of the boid is set to the updated position of the bullet.
+			MyBoid.Position = _position;
 
 			//Last, the position of the circle is updated.
+			Physics.Pos = _position;
+		}
 
-
-			//if (X < 0 || X > Game1.graphics.PreferredBackBufferWidth || Y < 0 || Y > Game1.graphics.PreferredBackBufferHeight)
-			//{
-			//	Used = false;
-			//}
+		/// <summary>
+		/// Get the direction the boid in us wants to go!
+		/// </summary>
+		/// <returns></returns>
+		public override float GetAimDir()
+		{
+			return MyBoid.Rotation;
 		}
 
 		#endregion //Methods
