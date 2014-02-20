@@ -1,6 +1,9 @@
 BulletFlockBuddy
 ================
 
+Check out the BulletFlockDemo to see how to use this lib:
+https://github.com/dmanning23/BulletFlockDemo
+
 a little game that mixes BulletML, CollisionBuddy, and the FlockBuddy.
 
 Why do this:
