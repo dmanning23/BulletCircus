@@ -20,7 +20,7 @@ namespace BulletFlockBuddy
 		/// <summary>
 		/// The poisition of this bullet.
 		/// </summary>
-		public Vector2 _position = Vector2.Zero;
+		protected Vector2 _position = Vector2.Zero;
 
 		#endregion //Members
 
@@ -41,6 +41,14 @@ namespace BulletFlockBuddy
 		{
 			get { return _position.Y; }
 			set { _position.Y = value; }
+		}
+
+		public Vector2 Position
+		{
+			get
+			{
+				return _position;
+			}
 		}
 		
 		#endregion //Properties

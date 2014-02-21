@@ -81,6 +81,7 @@ namespace BulletFlockBuddy
 		{
 			Debug.Assert(null != playerDelegate);
 			GetPlayerPosition = playerDelegate;
+			StartHeading = Vector2.UnitY;
 		}
 
 		/// <summary>
