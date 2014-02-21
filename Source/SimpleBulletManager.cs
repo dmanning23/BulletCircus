@@ -9,7 +9,7 @@ namespace BulletFlockBuddy
 	/// This manager creates simple bullets that use the default BulletML behavior.  
 	/// If you don't really need the flocking functionality, use this dude instead.
 	/// </summary>
-	class SimpleBulletManager : IBulletManager
+	public class SimpleBulletManager : IBulletManager
 	{
 		#region Members
 
@@ -79,6 +79,8 @@ namespace BulletFlockBuddy
 		public float StartSpeed { get; set; }
 
 		#endregion //Properties
+
+		#region Methods
 
 		public SimpleBulletManager(PositionDelegate playerDelegate)
 		{
@@ -151,5 +153,15 @@ namespace BulletFlockBuddy
 				}
 			}
 		}
+
+		/// <summary>
+		/// remove all the bullets from play
+		/// </summary>
+		public void Clear()
+		{
+			Bullets.Clear();
+		}
+
+		#endregion //Methods
 	}
 }

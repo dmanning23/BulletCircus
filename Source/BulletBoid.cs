@@ -6,7 +6,7 @@ namespace BulletFlockBuddy
 	/// <summary>
 	/// This class wraps up BulletMLLib.Bullet with the FlockBuddy.Boid and CollisionBuddy.Circle
 	/// </summary>
-	class BulletBoid : SimpleBullet
+	public class BulletBoid : SimpleBullet
 	{
 		#region Members
 

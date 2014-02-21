@@ -8,7 +8,7 @@ namespace BulletFlockBuddy
 	/// <summary>
 	/// This class is a simple BuleltML.Bullet with collisionbuddy.circle
 	/// </summary>
-	class SimpleBullet : Bullet
+	public class SimpleBullet : Bullet
 	{
 		#region Members
 

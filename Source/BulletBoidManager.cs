@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace BulletFlockBuddy
 {
-	class BulletBoidManager : Flock, IBulletManager
+	public class BulletBoidManager : Flock, IBulletManager
 	{
 		#region Members
 
@@ -156,6 +156,14 @@ namespace BulletFlockBuddy
 					i--;
 				}
 			}
+		}
+
+		/// <summary>
+		/// remove all the bullets from play
+		/// </summary>
+		public void Clear()
+		{
+			Bullets.Clear();
 		}
 	}
 }
