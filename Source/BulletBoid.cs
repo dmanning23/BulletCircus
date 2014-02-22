@@ -52,6 +52,8 @@ namespace BulletFlockBuddy
 
 			//Next the position of the boid is set to the updated position of the bullet.
 			MyBoid.Position = _position;
+			MyBoid.Speed = Speed * 60.0f;
+			
 
 			//Last, the position of the circle is updated.
 			Physics.Pos = _position;
