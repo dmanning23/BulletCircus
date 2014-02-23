@@ -1,4 +1,5 @@
 ﻿using FlockBuddy;
+using Vector2Extensions;
 using Microsoft.Xna.Framework;
 
 namespace BulletFlockBuddy
@@ -41,6 +42,15 @@ namespace BulletFlockBuddy
 
 			//create the boid
 			MyBoid = new Boid(BulletBoidManager, pos, radius, dir, speed, 1.0f, 500.0f, 1.0f, 100.0f);
+
+			//setup his behaviors
+			MyBoid.Behaviors.ActivateBehaviors(new EBehaviorType[] {
+					EBehaviorType.alignment,
+					EBehaviorType.cohesion,
+					EBehaviorType.separation,
+					EBehaviorType.obstacle_avoidance,
+					EBehaviorType.wall_avoidance
+				});
 		}
 
 		public override void Update()
@@ -53,7 +63,7 @@ namespace BulletFlockBuddy
 			//Next the position of the boid is set to the updated position of the bullet.
 			MyBoid.Position = _position;
 			MyBoid.Speed = Speed * 60.0f;
-			
+			MyBoid.Heading = Direction.ToVector2();
 
 			//Last, the position of the circle is updated.
 			Physics.Pos = _position;
