@@ -45,11 +45,11 @@ namespace BulletFlockBuddy
 
 			//setup his behaviors
 			MyBoid.Behaviors.ActivateBehaviors(new EBehaviorType[] {
-					//EBehaviorType.alignment,
-					//EBehaviorType.cohesion,
-					//EBehaviorType.separation,
-					//EBehaviorType.obstacle_avoidance,
-					//EBehaviorType.wall_avoidance,
+					EBehaviorType.alignment,
+					EBehaviorType.cohesion,
+					EBehaviorType.separation,
+					EBehaviorType.obstacle_avoidance,
+					EBehaviorType.wall_avoidance,
 					EBehaviorType.pursuit,
 					EBehaviorType.flee
 				});
