@@ -64,7 +64,7 @@ namespace BulletFlockBuddy
 		{
 		}
 
-		public void Init(Vector2 pos,
+		public virtual void Init(Vector2 pos,
 			float radius,
 			Vector2 dir,
 			float speed,

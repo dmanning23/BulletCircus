@@ -110,9 +110,6 @@ namespace BulletFlockBuddy
 			myBullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale);
 			Bullets.Add(myBullet);
 
-			//store the boid too
-			AddDude(myBullet.MyBoid);
-
 			return myBullet;
 		}
 		

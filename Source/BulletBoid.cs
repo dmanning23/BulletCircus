@@ -32,7 +32,7 @@ namespace BulletFlockBuddy
 			BulletBoidManager = myBulletManager;
 		}
 
-		public void Init(Vector2 pos,
+		public override void Init(Vector2 pos,
 			float radius,
 			Vector2 dir,
 			float speed,
@@ -45,11 +45,13 @@ namespace BulletFlockBuddy
 
 			//setup his behaviors
 			MyBoid.Behaviors.ActivateBehaviors(new EBehaviorType[] {
-					EBehaviorType.alignment,
-					EBehaviorType.cohesion,
-					EBehaviorType.separation,
-					EBehaviorType.obstacle_avoidance,
-					EBehaviorType.wall_avoidance
+					//EBehaviorType.alignment,
+					//EBehaviorType.cohesion,
+					//EBehaviorType.separation,
+					//EBehaviorType.obstacle_avoidance,
+					//EBehaviorType.wall_avoidance,
+					EBehaviorType.pursuit,
+					EBehaviorType.flee
 				});
 		}
 
