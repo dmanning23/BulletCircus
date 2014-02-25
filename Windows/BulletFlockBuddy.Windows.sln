@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletMLLib.Windows", "..\e
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlockBuddy.Windows", "..\externals\FlockBuddy\Windows\FlockBuddy.Windows.csproj", "{D2AC86B5-0BAA-4638-8FCA-1346F4816475}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletFlockBuddy.Tests", "..\Tests\BulletFlockBuddy.Tests\BulletFlockBuddy.Tests.csproj", "{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -221,6 +223,16 @@ Global
 		{D2AC86B5-0BAA-4638-8FCA-1346F4816475}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D2AC86B5-0BAA-4638-8FCA-1346F4816475}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D2AC86B5-0BAA-4638-8FCA-1346F4816475}.Release|x86.ActiveCfg = Release|Any CPU
+		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
