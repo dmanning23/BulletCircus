@@ -66,9 +66,6 @@ namespace BulletFlockBuddy
 			MyBoid.Position = _position;
 			MyBoid.Speed = Speed * 60.0f;
 			MyBoid.Heading = Direction.ToVector2();
-
-			//Last, the position of the circle is updated.
-			Physics.Pos = _position;
 		}
 
 		/// <summary>
