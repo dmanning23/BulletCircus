@@ -123,6 +123,8 @@ namespace BulletFlockBuddy.Tests
 			//verify everything updated
 			Assert.AreEqual(boid.Position.X, boid.MyBoid.Position.X);
 			Assert.AreEqual(boid.Position.Y, boid.MyBoid.Position.Y);
+			Assert.AreEqual(boid.Speed * 60.0f, boid.MyBoid.Speed);
+			Assert.AreEqual(boid.Direction, boid.MyBoid.Rotation);
 		}
 
 		[Test]
@@ -141,6 +143,8 @@ namespace BulletFlockBuddy.Tests
 			//verify everything updated
 			Assert.AreEqual(boid.Position.X, boid.MyBoid.Position.X);
 			Assert.AreEqual(boid.Position.Y, boid.MyBoid.Position.Y);
+			Assert.AreEqual(boid.Speed * 60.0f, boid.MyBoid.Speed);
+			Assert.AreEqual(boid.Direction, boid.MyBoid.Rotation);
 		}
 
 		[Test]
@@ -161,6 +165,8 @@ namespace BulletFlockBuddy.Tests
 			//verify everything updated
 			Assert.AreEqual(boid.Position.X, boid.MyBoid.Position.X);
 			Assert.AreEqual(boid.Position.Y, boid.MyBoid.Position.Y);
+			Assert.AreEqual(boid.Speed * 60.0f, boid.MyBoid.Speed);
+			Assert.AreEqual(boid.Direction, boid.MyBoid.Rotation);
 		}
 	}
 }
