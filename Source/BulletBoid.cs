@@ -1,6 +1,7 @@
 ﻿using FlockBuddy;
 using Vector2Extensions;
 using Microsoft.Xna.Framework;
+using BasicPrimitiveBuddy;
 
 namespace BulletFlockBuddy
 {
@@ -75,6 +76,12 @@ namespace BulletFlockBuddy
 		public override float GetAimDir()
 		{
 			return MyBoid.Rotation;
+		}
+
+		public virtual void Render(IBasicPrimitive prim, Color color)
+		{
+			base.Render(prim, color);
+			MyBoid.Render(prim, color);
 		}
 
 		#endregion //Methods

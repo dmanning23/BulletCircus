@@ -54,31 +54,35 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\externals\BulletMLLib\Windows\BulletMLLib.Windows.csproj">
+    <ProjectReference Include="..\..\BasicPrimitiveBuddy\Windows\BasicPrimitiveBuddy.Windows.csproj">
+      <Project>{0faa1286-7bfa-4765-8b51-62e438cb121d}</Project>
+      <Name>BasicPrimitiveBuddy.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BulletMLLib\Windows\BulletMLLib.Windows.csproj">
       <Project>{203274cd-9994-4562-b824-6cf9cae40347}</Project>
       <Name>BulletMLLib.Windows</Name>
     </ProjectReference>
-    <ProjectReference Include="..\externals\CellSpacePartition\Windows\CellSpacePartition.Windows.csproj">
+    <ProjectReference Include="..\..\CellSpacePartition\Windows\CellSpacePartition.Windows.csproj">
       <Project>{ed4cab1a-5436-4f45-aea4-6ced6f4364ef}</Project>
       <Name>CellSpacePartition.Windows</Name>
     </ProjectReference>
-    <ProjectReference Include="..\externals\CollisionBuddy\Windows\CollisionBuddy.Windows.csproj">
+    <ProjectReference Include="..\..\CollisionBuddy\Windows\CollisionBuddy.Windows.csproj">
       <Project>{e032cf52-88bc-4d76-8e93-3798f5ee5cd2}</Project>
       <Name>CollisionBuddy.Windows</Name>
     </ProjectReference>
-    <ProjectReference Include="..\externals\FlockBuddy\Windows\FlockBuddy.Windows.csproj">
+    <ProjectReference Include="..\..\FlockBuddy\Windows\FlockBuddy.Windows.csproj">
       <Project>{d2ac86b5-0baa-4638-8fca-1346f4816475}</Project>
       <Name>FlockBuddy.Windows</Name>
     </ProjectReference>
-    <ProjectReference Include="..\externals\GameTimer\Windows\GameTimer.Windows.csproj">
+    <ProjectReference Include="..\..\GameTimer\Windows\GameTimer.Windows.csproj">
       <Project>{6b6d4188-5c03-4e16-923b-96fdbc85b91a}</Project>
       <Name>GameTimer.Windows</Name>
     </ProjectReference>
-    <ProjectReference Include="..\externals\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsGL.csproj">
+    <ProjectReference Include="..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsGL.csproj">
       <Project>{7de47032-a904-4c29-bd22-2d235e8d91ba}</Project>
       <Name>MonoGame.Framework.WindowsGL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\externals\Vector2Extensions\Windows\Vector2Extensions.Windows.csproj">
+    <ProjectReference Include="..\..\Vector2Extensions\Windows\Vector2Extensions.Windows.csproj">
       <Project>{2c5acada-d15a-4193-ba0a-d36a362075f4}</Project>
       <Name>Vector2Extensions.Windows</Name>
     </ProjectReference>

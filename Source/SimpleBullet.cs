@@ -2,6 +2,7 @@
 using CollisionBuddy;
 using Microsoft.Xna.Framework;
 using Vector2Extensions;
+using BasicPrimitiveBuddy;
 
 namespace BulletFlockBuddy
 {
@@ -98,6 +99,11 @@ namespace BulletFlockBuddy
 
 			//Last, the position of the circle is updated.
 			Physics.Pos = _position;
+		}
+
+		public virtual void Render(IBasicPrimitive prim, Color color)
+		{
+			prim.Circle(Position, Physics.Radius, color);
 		}
 
 		#endregion //Methods
