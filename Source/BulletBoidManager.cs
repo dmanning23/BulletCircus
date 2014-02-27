@@ -161,6 +161,7 @@ namespace BulletFlockBuddy
 		/// </summary>
 		public void Clear()
 		{
+			Dudes.Clear();
 			Bullets.Clear();
 		}
 	}
