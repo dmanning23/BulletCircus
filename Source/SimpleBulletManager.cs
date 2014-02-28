@@ -19,7 +19,7 @@ namespace BulletFlockBuddy
 		/// </summary>
 		private object _listLock = new object();
 
-		public List<SimpleBullet> Bullets = new List<SimpleBullet>();
+		public List<SimpleBullet> Bullets { get; private set; }
 
 		public PositionDelegate GetPlayerPosition;
 
@@ -35,8 +35,8 @@ namespace BulletFlockBuddy
 		/// Can be used to do slowdown, speedup, etc.
 		/// </summary>
 		/// <value>The time speed.</value>
-		public float TimeSpeed 
-		{ 
+		public float TimeSpeed
+		{
 			get
 			{
 				return _timeSpeed;
@@ -60,7 +60,7 @@ namespace BulletFlockBuddy
 		/// </summary>
 		/// <value>The scale.</value>
 		public float Scale
-		{ 
+		{
 			get
 			{
 				return _scale;
@@ -92,6 +92,8 @@ namespace BulletFlockBuddy
 		{
 			Debug.Assert(null != playerDelegate);
 			GetPlayerPosition = playerDelegate;
+			Bullets = new List<SimpleBullet>();
+			StartHeading = Vector2.UnitY;
 		}
 
 		/// <summary>
@@ -106,7 +108,7 @@ namespace BulletFlockBuddy
 			Debug.Assert(null != GetPlayerPosition);
 			return GetPlayerPosition();
 		}
-		
+
 		/// <summary>
 		/// Create a new bullet.
 		/// </summary>
@@ -137,7 +139,7 @@ namespace BulletFlockBuddy
 				Bullets.Add(bullet);
 			}
 		}
-		
+
 		public void RemoveBullet(Bullet deadBullet)
 		{
 			var myMover = deadBullet as SimpleBullet;

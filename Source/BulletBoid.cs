@@ -80,7 +80,7 @@ namespace BulletFlockBuddy
 			return MyBoid.Rotation;
 		}
 
-		public virtual void Render(IBasicPrimitive prim, Color color)
+		public override void Render(IBasicPrimitive prim, Color color)
 		{
 			base.Render(prim, color);
 			MyBoid.Render(prim, color);

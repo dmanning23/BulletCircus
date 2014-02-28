@@ -16,6 +16,14 @@ namespace BulletFlockBuddy
 
 		#region Properties
 
+		public List<SimpleBullet> Bullets
+		{
+			get
+			{
+				return BulletManager.Bullets;
+			}
+		}
+
 		/// <summary>
 		/// How fast time moves in this game.
 		/// Can be used to do slowdown, speedup, etc.
@@ -47,6 +55,42 @@ namespace BulletFlockBuddy
 			set
 			{
 				BulletManager.Scale = value;
+			}
+		}
+
+		public Vector2 StartPosition 
+		{
+			get
+			{
+				return BulletManager.StartPosition;
+			}
+			set
+			{
+				BulletManager.StartPosition = value;
+			}
+		}
+
+		public Vector2 StartHeading
+		{
+			get
+			{
+				return BulletManager.StartHeading;
+			}
+			set
+			{
+				BulletManager.StartHeading = value;
+			}
+		}
+
+		public float StartSpeed
+		{
+			get
+			{
+				return BulletManager.StartSpeed;
+			}
+			set
+			{
+				BulletManager.StartSpeed = value;
 			}
 		}
 
@@ -126,7 +170,7 @@ namespace BulletFlockBuddy
 		public void Clear()
 		{
 			//clear out the flock
-			Clear();
+			base.Clear();
 
 			//clear out the bullets
 			BulletManager.Clear();
