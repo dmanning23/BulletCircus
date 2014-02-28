@@ -43,7 +43,7 @@ namespace BulletFlockBuddy
 			base.Init(pos, radius, dir, speed, bulletmlScale);
 
 			//create the boid
-			MyBoid = new Boid(BulletBoidManager, pos, radius, dir, speed, 1.0f, 500.0f, 1.0f, 100.0f);
+			MyBoid = new Boid(BulletBoidManager, pos, radius, dir, speed, 1.0f, 500.0f, 10.0f, 100.0f);
 
 			//setup his behaviors
 			MyBoid.Behaviors.ActivateBehaviors(new EBehaviorType[] {
@@ -55,6 +55,8 @@ namespace BulletFlockBuddy
 					EBehaviorType.pursuit,
 					EBehaviorType.flee
 				});
+
+			SetBoidToBullet();
 		}
 
 		/// <summary>
@@ -66,9 +68,7 @@ namespace BulletFlockBuddy
 			base.PostUpdate();
 
 			//Next the position of the boid is set to the updated position of the bullet.
-			MyBoid.Position = _position;
-			MyBoid.Speed = Speed * 60.0f;
-			MyBoid.Heading = Direction.ToVector2();
+			SetBoidToBullet();
 		}
 
 		/// <summary>
@@ -84,6 +84,16 @@ namespace BulletFlockBuddy
 		{
 			base.Render(prim, color);
 			MyBoid.Render(prim, color);
+		}
+
+		/// <summary>
+		/// update the boid to match the bullet params
+		/// </summary>
+		private void SetBoidToBullet()
+		{
+			MyBoid.Position = _position;
+			MyBoid.Speed = Speed * 60.0f;
+			MyBoid.Heading = Direction.ToVector2();
 		}
 
 		#endregion //Methods
