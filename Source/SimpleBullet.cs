@@ -1,4 +1,5 @@
 ﻿using BulletMLLib;
+using System.Threading.Tasks;
 using CollisionBuddy;
 using Microsoft.Xna.Framework;
 using Vector2Extensions;
@@ -92,11 +93,11 @@ namespace BulletFlockBuddy
 			Physics = new Circle(pos, radius);
 		}
 
-		public override void Update()
+		/// <summary>
+		/// This method gets called after the update method
+		/// </summary>
+		public override void PostUpdate()
 		{
-			//the bullet is updated
-			base.Update();
-
 			//Last, the position of the circle is updated.
 			Physics.Pos = _position;
 		}

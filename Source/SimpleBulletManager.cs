@@ -1,4 +1,5 @@
 ﻿using BulletMLLib;
+using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,6 +13,11 @@ namespace BulletFlockBuddy
 	public class SimpleBulletManager : IBulletManager
 	{
 		#region Members
+
+		/// <summary>
+		/// crappy object for locking the list
+		/// </summary>
+		private object _listLock = new object();
 
 		public List<SimpleBullet> Bullets = new List<SimpleBullet>();
 
@@ -110,16 +116,31 @@ namespace BulletFlockBuddy
 			//create the new bullet
 			SimpleBullet myBullet = new SimpleBullet(this);
 
-			//initialize, store in our list, and return the bullet
-			myBullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale);
-			Bullets.Add(myBullet);
+			InitBullet(myBullet);
 
+			//return the bullet we created
 			return myBullet;
+		}
+
+		/// <summary>
+		/// Add a bullet to the bulletlist safely
+		/// </summary>
+		/// <param name="bullet"></param>
+		public void InitBullet(SimpleBullet bullet)
+		{
+			//initialize the bullet
+			bullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale);
+
+			//lock the list before adding the bullet
+			lock (_listLock)
+			{
+				Bullets.Add(bullet);
+			}
 		}
 		
 		public void RemoveBullet(Bullet deadBullet)
 		{
-			var myMover = deadBullet as BulletBoid;
+			var myMover = deadBullet as SimpleBullet;
 			if (myMover != null)
 			{
 				myMover.Used = false;
@@ -128,10 +149,25 @@ namespace BulletFlockBuddy
 
 		public void Update()
 		{
+			//create a list of all our tasks
+			List<Task> taskList = new List<Task>();
+
+			//grab the number fo bullets in the list, so we dont update new ones
+			int numBullets = Bullets.Count;
+
 			//update the bulletboid part of the dude
-			for (int i = 0; i < Bullets.Count; i++)
+			for (int i = 0; i < numBullets; i++)
 			{
-				Bullets[i].Update();
+				taskList.Add(Bullets[i].Update());
+			}
+
+			//wait for all the updates to finish
+			Task.WaitAll(taskList.ToArray());
+
+			//Run the post update step
+			for (int i = 0; i < numBullets; i++)
+			{
+				Bullets[i].PostUpdate();
 			}
 
 			FreeBullets();
@@ -146,6 +182,8 @@ namespace BulletFlockBuddy
 			{
 				if (!Bullets[i].Used)
 				{
+					//dont need to lock the list, because this isn't called in update loop
+
 					//remove from the list of bullets
 					Bullets.Remove(Bullets[i]);
 
@@ -159,6 +197,8 @@ namespace BulletFlockBuddy
 		/// </summary>
 		public void Clear()
 		{
+			//dont need to lock the list, because this isn't called in update loop
+
 			Bullets.Clear();
 		}
 

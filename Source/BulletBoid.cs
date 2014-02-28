@@ -1,4 +1,5 @@
 ﻿using FlockBuddy;
+using System.Threading.Tasks;
 using Vector2Extensions;
 using Microsoft.Xna.Framework;
 using BasicPrimitiveBuddy;
@@ -56,12 +57,13 @@ namespace BulletFlockBuddy
 				});
 		}
 
-		public override void Update()
+		/// <summary>
+		/// This method gets called after the update method
+		/// </summary>
+		public override void PostUpdate()
 		{
-			//the boid is updated in the mananger update.  that will give a target heading.
-
-			//Next the bullet is updated.  If it uses an "aim" action, it will use the heading from the boid.
-			base.Update();
+			//update the base class, which will do the physics circle
+			base.PostUpdate();
 
 			//Next the position of the boid is set to the updated position of the bullet.
 			MyBoid.Position = _position;

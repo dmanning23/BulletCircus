@@ -10,12 +10,7 @@ namespace BulletFlockBuddy
 	{
 		#region Members
 
-		public List<BulletBoid> Bullets = new List<BulletBoid>();
-
-		public PositionDelegate GetPlayerPosition;
-
-		private float _timeSpeed = 1.0f;
-		private float _scale = 1.0f;
+		private SimpleBulletManager BulletManager { get; set; }
 
 		#endregion //Members
 
@@ -30,18 +25,11 @@ namespace BulletFlockBuddy
 		{ 
 			get
 			{
-				return _timeSpeed;
+				return BulletManager.TimeSpeed;
 			}
 			set
 			{
-				//set my time speed
-				_timeSpeed = value;
-
-				//set all the bullet time speeds
-				foreach (var myDude in Bullets)
-				{
-					myDude.TimeSpeed = _timeSpeed;
-				}
+				BulletManager.TimeSpeed = value;
 			}
 		}
 
@@ -54,34 +42,20 @@ namespace BulletFlockBuddy
 		{ 
 			get
 			{
-				return _scale;
+				return BulletManager.Scale;
 			}
 			set
 			{
-				//set my scale
-				_scale = value;
-
-				//set all the bullet scales
-				foreach (var myDude in Bullets)
-				{
-					myDude.Scale = _scale;
-				}
+				BulletManager.Scale = value;
 			}
 		}
-
-		public Vector2 StartPosition { get; set; }
-
-		public Vector2 StartHeading { get; set; }
-
-		public float StartSpeed { get; set; }
 
 		#endregion //Properties
 
 		public BulletBoidManager(PositionDelegate playerDelegate)
 		{
 			Debug.Assert(null != playerDelegate);
-			GetPlayerPosition = playerDelegate;
-			StartHeading = Vector2.UnitY;
+			BulletManager = new SimpleBulletManager(playerDelegate);
 		}
 
 		/// <summary>
@@ -92,9 +66,7 @@ namespace BulletFlockBuddy
 		/// <param name="targettedBullet">the bullet we are getting a target for</param>
 		public Vector2 PlayerPosition(Bullet targettedBullet)
 		{
-			//just give the player's position
-			Debug.Assert(null != GetPlayerPosition);
-			return GetPlayerPosition();
+			return BulletManager.PlayerPosition(targettedBullet);
 		}
 		
 		/// <summary>
@@ -106,20 +78,14 @@ namespace BulletFlockBuddy
 			//create the new bullet
 			BulletBoid myBullet = new BulletBoid(this);
 
-			//initialize, store in our list, and return the bullet
-			myBullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale);
-			Bullets.Add(myBullet);
+			BulletManager.InitBullet(myBullet);
 
 			return myBullet;
 		}
 		
 		public void RemoveBullet(Bullet deadBullet)
 		{
-			var myMover = deadBullet as BulletBoid;
-			if (myMover != null)
-			{
-				myMover.Used = false;
-			}
+			BulletManager.RemoveBullet(deadBullet);
 		}
 
 		public override void Update(GameTime curTime)
@@ -127,13 +93,8 @@ namespace BulletFlockBuddy
 			//the base class updates the flocking part of the dudes
 			base.Update(curTime);
 
-			//update the bulletboid part of the dude
-			for (int i = 0; i < Bullets.Count; i++)
-			{
-				Bullets[i].Update();
-			}
-
-			FreeBullets();
+			//update the bullet part of the dude
+			BulletManager.Update();
 		}
 
 		/// <summary>
@@ -141,15 +102,18 @@ namespace BulletFlockBuddy
 		/// </summary>
 		private void FreeBullets()
 		{
-			for (int i = 0; i < Bullets.Count; i++)
+			for (int i = 0; i < BulletManager.Bullets.Count; i++)
 			{
-				if (!Bullets[i].Used)
+				BulletBoid bullet = BulletManager.Bullets[i] as BulletBoid;
+				Debug.Assert(null != bullet);
+
+				if (!bullet.Used)
 				{
 					//remove from the flock also
-					Dudes.Remove(Bullets[i].MyBoid);
+					RemoveBoid(bullet.MyBoid);
 
 					//remove from the list of bullets
-					Bullets.Remove(Bullets[i]);
+					BulletManager.Bullets.Remove(bullet);
 
 					i--;
 				}
@@ -161,7 +125,11 @@ namespace BulletFlockBuddy
 		/// </summary>
 		public void Clear()
 		{
-			Bullets.Clear();
+			//clear out the flock
+			Clear();
+
+			//clear out the bullets
+			BulletManager.Clear();
 		}
 	}
 }
