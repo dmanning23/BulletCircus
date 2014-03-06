@@ -160,7 +160,7 @@ namespace BulletFlockBuddy
 			//update the bulletboid part of the dude
 			for (int i = 0; i < numBullets; i++)
 			{
-				taskList.Add(Bullets[i].Update());
+				taskList.Add(Bullets[i].UpdateAsync());
 			}
 
 			//wait for all the updates to finish
