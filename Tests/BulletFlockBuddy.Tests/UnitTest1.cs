@@ -1,12 +1,10 @@
-﻿using System;
-using NUnit;
-using NUnit.Framework;
-using Moq;
-using BulletFlockBuddy;
+﻿using BulletMLLib;
 using Microsoft.Xna.Framework;
-using BulletMLLib;
+using Moq;
+using NUnit.Framework;
+using System;
 
-namespace BulletFlockBuddy.Tests
+namespace BulletCircus.Tests
 {
 	public class UnitTest1
 	{
@@ -14,10 +12,10 @@ namespace BulletFlockBuddy.Tests
 		public void GetAimDir_fromBoid()
 		{
 			//create a fake bulletmanager
-			var manager = new Mock<BulletBoidManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
+			var manager = new Mock<SimpleMissileManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
 
 			//create the boid object
-			var boid = new BulletBoid(manager.Object);
+			var boid = new SimpleMissile(manager.Object);
 			boid.Init(Vector2.Zero, 10.0f, Vector2.UnitY, 1.0f, 1.0f);
 
 			//set the heading of the boid object
@@ -33,10 +31,10 @@ namespace BulletFlockBuddy.Tests
 		public void GetAimDir_fromBoid_1()
 		{
 			//create a fake bulletmanager
-			var manager = new Mock<BulletBoidManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
+			var manager = new Mock<SimpleMissileManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
 
 			//create the boid object
-			var boid = new BulletBoid(manager.Object);
+			var boid = new SimpleMissile(manager.Object);
 			boid.Init(Vector2.Zero, 10.0f, Vector2.UnitY, 1.0f, 1.0f);
 
 			//set the heading of the boid object
@@ -52,10 +50,10 @@ namespace BulletFlockBuddy.Tests
 		public void GetAimDir_fromBoid_2()
 		{
 			//create a fake bulletmanager
-			var manager = new Mock<BulletBoidManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
+			var manager = new Mock<SimpleMissileManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
 
 			//create the boid object
-			var boid = new BulletBoid(manager.Object);
+			var boid = new SimpleMissile(manager.Object);
 			boid.Init(Vector2.Zero, 10.0f, Vector2.UnitY, 1.0f, 1.0f);
 
 			//set the heading of the boid object
@@ -71,10 +69,10 @@ namespace BulletFlockBuddy.Tests
 		public void Update_Bullet()
 		{
 			//create a fake bulletmanager
-			var manager = new Mock<BulletBoidManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
+			var manager = new Mock<SimpleMissileManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
 
 			//create the boid object
-			var boid = new BulletBoid(manager.Object);
+			var boid = new SimpleMissile(manager.Object);
 			boid.Init(Vector2.Zero, 10.0f, Vector2.UnitX, 1.0f, 1.0f);
 
 			//update it once
@@ -91,10 +89,10 @@ namespace BulletFlockBuddy.Tests
 		public void Update_Boid()
 		{
 			//create a fake bulletmanager
-			var manager = new Mock<BulletBoidManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
+			var manager = new Mock<SimpleMissileManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
 
 			//create the boid object
-			var boid = new BulletBoid(manager.Object);
+			var boid = new SimpleMissile(manager.Object);
 			boid.Init(Vector2.Zero, 10.0f, Vector2.UnitX, 1.0f, 1.0f);
 
 			//update it once
@@ -111,10 +109,10 @@ namespace BulletFlockBuddy.Tests
 		public void Update_BulletBoid()
 		{
 			//create a fake bulletmanager
-			var manager = new Mock<BulletBoidManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
+			var manager = new Mock<SimpleMissileManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
 
 			//create the boid object
-			var boid = new BulletBoid(manager.Object);
+			var boid = new SimpleMissile(manager.Object);
 			boid.Init(Vector2.Zero, 10.0f, Vector2.UnitY, 1.0f, 1.0f);
 
 			//update it once
@@ -131,10 +129,10 @@ namespace BulletFlockBuddy.Tests
 		public void Update_BulletBoid_1()
 		{
 			//create a fake bulletmanager
-			var manager = new Mock<BulletBoidManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
+			var manager = new Mock<SimpleMissileManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
 
 			//create the boid object
-			var boid = new BulletBoid(manager.Object);
+			var boid = new SimpleMissile(manager.Object);
 			boid.Init(new Vector2(100, 200), 10.0f, Vector2.UnitY, 1.0f, 1.0f);
 
 			//update it once
@@ -151,10 +149,10 @@ namespace BulletFlockBuddy.Tests
 		public void Update_BulletBoid_2()
 		{
 			//create a fake bulletmanager
-			var manager = new Mock<BulletBoidManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
+			var manager = new Mock<SimpleMissileManager>(new PositionDelegate(() => { return Vector2.UnitX; })) { CallBase = true };
 
 			//create the boid object
-			var boid = new BulletBoid(manager.Object);
+			var boid = new SimpleMissile(manager.Object);
 			boid.Init(new Vector2(100, 200),
 				10.0f, 
 				new Vector2(10, -20), 11.0f, 1.0f);

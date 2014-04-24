@@ -1,10 +1,10 @@
 ﻿using BulletMLLib;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
-namespace BulletFlockBuddy
+namespace BulletCircus
 {
 	/// <summary>
 	/// This manager creates simple bullets that use the default BulletML behavior.  

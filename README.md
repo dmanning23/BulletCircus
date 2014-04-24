@@ -1,8 +1,8 @@
-BulletFlockBuddy
+BulletCircus
 ================
 
-Check out the BulletFlockDemo to see how to use this lib:
-https://github.com/dmanning23/BulletFlockDemo
+Check out the BulletCircusDemo to see how to use this lib:
+https://github.com/dmanning23/BulletCircusDemo
 
 a little game that mixes BulletML, CollisionBuddy, and the FlockBuddy.
 
@@ -20,6 +20,7 @@ Why do this:
      flee
 
 The behavior I'm looking for is a shoal of missiles are fired, they group together, pursue the enemy ship, while avoiding interceptor missiles and obstacles like explosions.
+It should look something like this: https://www.youtube.com/watch?v=BzXfVgYCxWI
 
 None of those three packages were really written to be interchangeable, so there will be a BulletBoid class that encapsulates all three of them.
 

@@ -1,11 +1,10 @@
-﻿using BulletMLLib;
-using System.Threading.Tasks;
+﻿using BasicPrimitiveBuddy;
+using BulletMLLib;
 using CollisionBuddy;
 using Microsoft.Xna.Framework;
 using Vector2Extensions;
-using BasicPrimitiveBuddy;
 
-namespace BulletFlockBuddy
+namespace BulletCircus
 {
 	/// <summary>
 	/// This class is a simple BuleltML.Bullet with collisionbuddy.circle
@@ -58,7 +57,7 @@ namespace BulletFlockBuddy
 		#region Methods
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="BulletBoid"/> class.
+		/// Initializes a new instance of the <see cref="SimpleMissile"/> class.
 		/// </summary>
 		/// <param name="myBulletManager">My bullet manager.</param>
 		public SimpleBullet(IBulletManager myBulletManager)
