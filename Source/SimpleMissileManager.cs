@@ -167,7 +167,7 @@ namespace BulletCircus
 		/// <summary>
 		/// remove all the bullets from play
 		/// </summary>
-		public void Clear()
+		public override void Clear()
 		{
 			//clear out the flock
 			base.Clear();
