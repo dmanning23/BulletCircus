@@ -31,11 +31,11 @@ namespace BulletCircus
 		/// </summary>
 		/// <param name="spriteBatch"></param>
 		/// <param name="bullets"></param>
-		public void Render(SpriteBatch spriteBatch, List<Bullet> bullets)
+		public void Render(SpriteBatch spriteBatch, List<Bullet> bullets, Color color)
 		{
 			for (int i = 0; i < bullets.Count; i++)
 			{
-				Render(spriteBatch, bullets[i]);
+				Render(spriteBatch, bullets[i], color);
 			}
 		}
 
@@ -44,7 +44,7 @@ namespace BulletCircus
 		/// </summary>
 		/// <param name="spriteBatch"></param>
 		/// <param name="bullet">the bullet to draw</param>
-		public void Render(SpriteBatch spriteBatch, Bullet bullet)
+		public void Render(SpriteBatch spriteBatch, Bullet bullet, Color color)
 		{
 			//TODO: draw the bullet
 		}

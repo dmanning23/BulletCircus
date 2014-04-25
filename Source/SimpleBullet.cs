@@ -1,4 +1,5 @@
 ﻿using BasicPrimitiveBuddy;
+using Microsoft.Xna.Framework.Graphics;
 using BulletMLLib;
 using CollisionBuddy;
 using Microsoft.Xna.Framework;
@@ -101,9 +102,26 @@ namespace BulletCircus
 			Physics.Pos = _position;
 		}
 
+		/// <summary>
+		/// Draw the debug info for this bullet
+		/// </summary>
+		/// <param name="prim"></param>
+		/// <param name="color"></param>
 		public virtual void Render(IBasicPrimitive prim, Color color)
 		{
 			prim.Circle(Position, Physics.Radius, color);
+		}
+
+		/// <summary>
+		/// Render a texture over this bullet
+		/// Override in child classes to draw more stuff, like trails or particle effects
+		/// </summary>
+		/// <param name="spriteBatch"></param>
+		/// <param name="sprite"></param>
+		/// <param name="color"></param>
+		public virtual void Render(SpriteBatch spriteBatch, BulletSprite sprite, Color color)
+		{
+			sprite.Render(spriteBatch, this, color);
 		}
 
 		#endregion //Methods
