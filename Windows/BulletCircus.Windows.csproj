@@ -72,6 +72,10 @@
       <Project>{d2ac86b5-0baa-4638-8fca-1346f4816475}</Project>
       <Name>FlockBuddy.Windows</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\MatrixExtensions\Windows\MatrixExtensions.Windows.csproj">
+      <Project>{e2c50d0b-a1c1-4f67-92cb-be0e587a3ce6}</Project>
+      <Name>MatrixExtensions.Windows</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsGL.csproj">
       <Project>{7de47032-a904-4c29-bd22-2d235e8d91ba}</Project>
       <Name>MonoGame.Framework.WindowsGL</Name>
