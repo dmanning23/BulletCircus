@@ -21,6 +21,27 @@ namespace BulletCircus
 
 		#endregion //Members
 
+		#region Properties
+
+		/// <summary>
+		/// Gets or sets the speed
+		/// </summary>
+		/// <value>The speed, in pixels/frame</value>
+		public override float Speed
+		{
+			get
+			{
+				return base.Speed;
+			}
+			set
+			{
+				base.Speed = value;
+				MyBoid.Speed = value;
+			}
+		}
+
+		#endregion //Properties
+
 		#region Methods
 
 		/// <summary>
@@ -39,8 +60,6 @@ namespace BulletCircus
 			float speed,
 			float bulletmlScale)
 		{
-			base.Init(pos, radius, dir, speed, bulletmlScale);
-
 			//create the boid
 			MyBoid = new Boid(SimpleMissileManager, pos, radius, dir, speed, 1.0f, 500.0f, 10.0f, 100.0f);
 
@@ -54,6 +73,9 @@ namespace BulletCircus
 					EBehaviorType.pursuit,
 					EBehaviorType.flee
 				});
+
+			//setup the bullet
+			base.Init(pos, radius, dir, speed, bulletmlScale);
 
 			SetBoidToBullet();
 		}
