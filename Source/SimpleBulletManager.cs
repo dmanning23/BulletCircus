@@ -10,7 +10,7 @@ namespace BulletCircus
 	/// This manager creates simple bullets that use the default BulletML behavior.  
 	/// If you don't really need the flocking functionality, use this dude instead.
 	/// </summary>
-	public class SimpleBulletManager : IBulletManager
+	public class SimpleBulletManager : ISimpleBulletManager
 	{
 		#region Members
 
@@ -149,7 +149,7 @@ namespace BulletCircus
 			}
 		}
 
-		public void Update()
+		public void Update(GameTime gameTime)
 		{
 			//create a list of all our tasks
 			List<Task> taskList = new List<Task>();

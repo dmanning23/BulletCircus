@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace BulletCircus
 {
-	public class SimpleMissileManager : Flock, IBulletManager
+	public class SimpleMissileManager : Flock, ISimpleBulletManager
 	{
 		#region Members
 
@@ -122,9 +122,14 @@ namespace BulletCircus
 			//create the new bullet
 			SimpleMissile myBullet = new SimpleMissile(this);
 
-			BulletManager.InitBullet(myBullet);
+			InitBullet(myBullet);
 
 			return myBullet;
+		}
+
+		public void InitBullet(SimpleBullet bullet)
+		{
+			BulletManager.InitBullet(bullet);
 		}
 		
 		public void RemoveBullet(Bullet deadBullet)
@@ -138,7 +143,7 @@ namespace BulletCircus
 			base.Update(curTime);
 
 			//update the bullet part of the dude
-			BulletManager.Update();
+			BulletManager.Update(curTime);
 		}
 
 		/// <summary>
