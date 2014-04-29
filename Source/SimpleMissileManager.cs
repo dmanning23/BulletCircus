@@ -96,10 +96,9 @@ namespace BulletCircus
 
 		#endregion //Properties
 
-		public SimpleMissileManager(PositionDelegate playerDelegate)
+		public SimpleMissileManager()
 		{
-			Debug.Assert(null != playerDelegate);
-			BulletManager = new SimpleBulletManager(playerDelegate);
+			BulletManager = new SimpleBulletManager(() => { return Vector2.Zero; } );
 		}
 
 		/// <summary>
@@ -110,6 +109,7 @@ namespace BulletCircus
 		/// <param name="targettedBullet">the bullet we are getting a target for</param>
 		public Vector2 PlayerPosition(Bullet targettedBullet)
 		{
+			Debug.Assert(false); //This should never get called!!!
 			return BulletManager.PlayerPosition(targettedBullet);
 		}
 		
