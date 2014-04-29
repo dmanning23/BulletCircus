@@ -1,4 +1,5 @@
 ﻿using BulletMLLib;
+using GameTimer;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -149,7 +150,7 @@ namespace BulletCircus
 			}
 		}
 
-		public void Update(GameTime gameTime)
+		public void Update(GameClock gameTime)
 		{
 			//create a list of all our tasks
 			List<Task> taskList = new List<Task>();

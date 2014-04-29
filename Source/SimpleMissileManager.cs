@@ -1,4 +1,5 @@
 ﻿using BulletMLLib;
+using GameTimer;
 using FlockBuddy;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
@@ -137,7 +138,7 @@ namespace BulletCircus
 			BulletManager.RemoveBullet(deadBullet);
 		}
 
-		public override void Update(GameTime curTime)
+		public override void Update(GameClock curTime)
 		{
 			//the base class updates the flocking part of the dudes
 			base.Update(curTime);

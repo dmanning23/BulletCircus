@@ -75,6 +75,10 @@
       <Project>{d2ac86b5-0baa-4638-8fca-1346f4816475}</Project>
       <Name>FlockBuddy.Windows</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\GameTimer\Windows\GameTimer.Windows.csproj">
+      <Project>{6b6d4188-5c03-4e16-923b-96fdbc85b91a}</Project>
+      <Name>GameTimer.Windows</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\MatrixExtensions\Windows\MatrixExtensions.Windows.csproj">
       <Project>{e2c50d0b-a1c1-4f67-92cb-be0e587a3ce6}</Project>
       <Name>MatrixExtensions.Windows</Name>

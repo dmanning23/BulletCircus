@@ -1,6 +1,7 @@
 ﻿using BulletMLLib;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using GameTimer;
 
 namespace BulletCircus
 {
@@ -34,7 +35,7 @@ namespace BulletCircus
 		/// <param name="bullet"></param>
 		void InitBullet(SimpleBullet bullet);
 
-		void Update(GameTime gameTime);
+		void Update(GameClock gameTime);
 
 		/// <summary>
 		/// remove all the bullets from play
