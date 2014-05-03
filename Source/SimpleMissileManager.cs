@@ -97,6 +97,8 @@ namespace BulletCircus
 
 		#endregion //Properties
 
+		#region Methods
+
 		public SimpleMissileManager()
 		{
 			BulletManager = new SimpleBulletManager(() => { return Vector2.Zero; } );
@@ -126,6 +128,11 @@ namespace BulletCircus
 			InitBullet(myBullet);
 
 			return myBullet;
+		}
+
+		public Bullet CreateTopBullet()
+		{
+			return BulletManager.CreateTopBullet();
 		}
 
 		public void InitBullet(SimpleBullet bullet)
@@ -181,5 +188,16 @@ namespace BulletCircus
 			//clear out the bullets
 			BulletManager.Clear();
 		}
+
+		/// <summary>
+		/// Easy way to correctly shoot a bullet pattern
+		/// </summary>
+		/// <param name="pattern"></param>
+		public void Shoot(BulletPattern pattern)
+		{
+			BulletManager.Shoot(pattern);
+		}
+
+		#endregion //Methods
 	}
 }

@@ -42,6 +42,12 @@ namespace BulletCircus
 		/// </summary>
 		void Clear();
 
+		/// <summary>
+		/// Easy way to correctly shoot a bullet pattern
+		/// </summary>
+		/// <param name="pattern"></param>
+		void Shoot(BulletPattern pattern);
+
 		#endregion //Methods
 	}
 }

@@ -22,6 +22,8 @@ namespace BulletCircus
 
 		public List<SimpleBullet> Bullets { get; private set; }
 
+		private List<SimpleBullet> TopBullets { get; set; }
+
 		public PositionDelegate GetPlayerPosition;
 
 		private float _timeSpeed = 1.0f;
@@ -94,6 +96,7 @@ namespace BulletCircus
 			Debug.Assert(null != playerDelegate);
 			GetPlayerPosition = playerDelegate;
 			Bullets = new List<SimpleBullet>();
+			TopBullets = new List<SimpleBullet>();
 			StartHeading = Vector2.UnitY;
 		}
 
@@ -120,6 +123,24 @@ namespace BulletCircus
 			SimpleBullet myBullet = new SimpleBullet(this);
 
 			InitBullet(myBullet);
+
+			//return the bullet we created
+			return myBullet;
+		}
+
+		public Bullet CreateTopBullet()
+		{
+			//create the new bullet
+			SimpleBullet myBullet = new SimpleBullet(this);
+
+			//initialize the bullet
+			myBullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale);
+
+			//lock the list before adding the bullet
+			lock (_listLock)
+			{
+				TopBullets.Add(myBullet);
+			}
 
 			//return the bullet we created
 			return myBullet;
@@ -152,6 +173,12 @@ namespace BulletCircus
 
 		public void Update(GameClock gameTime)
 		{
+			//Update all the top bullets first
+			for (int i = 0; i < TopBullets.Count; i++)
+			{
+				TopBullets[i].Update();
+			}
+
 			//create a list of all our tasks
 			List<Task> taskList = new List<Task>();
 
@@ -193,6 +220,16 @@ namespace BulletCircus
 					i--;
 				}
 			}
+
+			//clear out top level bullets
+			for (int i = 0; i < TopBullets.Count; i++)
+			{
+				if (TopBullets[i].TasksFinished())
+				{
+					TopBullets.RemoveAt(i);
+					i--;
+				}
+			}
 		}
 
 		/// <summary>
@@ -203,6 +240,18 @@ namespace BulletCircus
 			//dont need to lock the list, because this isn't called in update loop
 
 			Bullets.Clear();
+			TopBullets.Clear();
+		}
+
+		/// <summary>
+		/// Easy way to correctly shoot a bullet pattern
+		/// </summary>
+		/// <param name="pattern"></param>
+		public void Shoot(BulletPattern pattern)
+		{
+			//add a new bullet in the center of the screen
+			var bullet = CreateTopBullet();
+			bullet.InitTopNode(pattern.RootNode);
 		}
 
 		#endregion //Methods
