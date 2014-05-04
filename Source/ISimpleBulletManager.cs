@@ -29,12 +29,6 @@ namespace BulletCircus
 
 		#region Methods
 
-		/// <summary>
-		/// Add a bullet to the bulletlist safely
-		/// </summary>
-		/// <param name="bullet"></param>
-		void InitBullet(SimpleBullet bullet);
-
 		void Update(GameClock gameTime);
 
 		/// <summary>

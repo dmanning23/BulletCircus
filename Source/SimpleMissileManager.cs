@@ -125,19 +125,19 @@ namespace BulletCircus
 			//create the new bullet
 			SimpleMissile myBullet = new SimpleMissile(this);
 
-			InitBullet(myBullet);
+			BulletManager.InitBullet(myBullet);
 
 			return myBullet;
 		}
 
 		public Bullet CreateTopBullet()
 		{
-			return BulletManager.CreateTopBullet();
-		}
+			//create the new bullet
+			SimpleMissile myBullet = new SimpleMissile(this);
 
-		public void InitBullet(SimpleBullet bullet)
-		{
-			BulletManager.InitBullet(bullet);
+			BulletManager.InitTopBullet(myBullet);
+
+			return myBullet;
 		}
 		
 		public void RemoveBullet(Bullet deadBullet)
@@ -195,7 +195,9 @@ namespace BulletCircus
 		/// <param name="pattern"></param>
 		public void Shoot(BulletPattern pattern)
 		{
-			BulletManager.Shoot(pattern);
+			//add a new bullet in the center of the screen
+			var bullet = CreateTopBullet();
+			bullet.InitTopNode(pattern.RootNode);
 		}
 
 		#endregion //Methods

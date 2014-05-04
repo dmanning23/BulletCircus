@@ -128,6 +128,22 @@ namespace BulletCircus
 			return myBullet;
 		}
 
+		/// <summary>
+		/// Add a bullet to the bulletlist safely
+		/// </summary>
+		/// <param name="bullet"></param>
+		public void InitBullet(SimpleBullet bullet)
+		{
+			//initialize the bullet
+			bullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale);
+
+			//lock the list before adding the bullet
+			lock (_listLock)
+			{
+				Bullets.Add(bullet);
+			}
+		}
+
 		public Bullet CreateTopBullet()
 		{
 			//create the new bullet
@@ -150,7 +166,7 @@ namespace BulletCircus
 		/// Add a bullet to the bulletlist safely
 		/// </summary>
 		/// <param name="bullet"></param>
-		public void InitBullet(SimpleBullet bullet)
+		public void InitTopBullet(SimpleBullet bullet)
 		{
 			//initialize the bullet
 			bullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale);
@@ -158,7 +174,7 @@ namespace BulletCircus
 			//lock the list before adding the bullet
 			lock (_listLock)
 			{
-				Bullets.Add(bullet);
+				TopBullets.Add(bullet);
 			}
 		}
 
