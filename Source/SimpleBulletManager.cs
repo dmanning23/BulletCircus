@@ -106,7 +106,7 @@ namespace BulletCircus
 		/// </summary>
 		/// <returns>The position to aim the bullet at</returns>
 		/// <param name="targettedBullet">the bullet we are getting a target for</param>
-		public Vector2 PlayerPosition(Bullet targettedBullet)
+		public Vector2 PlayerPosition(IBullet targettedBullet)
 		{
 			//just give the player's position
 			Debug.Assert(null != GetPlayerPosition);
@@ -117,7 +117,7 @@ namespace BulletCircus
 		/// Create a new bullet.
 		/// </summary>
 		/// <returns>A shiny new bullet</returns>
-		public Bullet CreateBullet()
+		public IBullet CreateBullet()
 		{
 			//create the new bullet
 			SimpleBullet myBullet = new SimpleBullet(this);
@@ -144,7 +144,7 @@ namespace BulletCircus
 			}
 		}
 
-		public Bullet CreateTopBullet()
+		public IBullet CreateTopBullet()
 		{
 			//create the new bullet
 			SimpleBullet myBullet = new SimpleBullet(this);
@@ -178,7 +178,7 @@ namespace BulletCircus
 			}
 		}
 
-		public void RemoveBullet(Bullet deadBullet)
+		public void RemoveBullet(IBullet deadBullet)
 		{
 			var myMover = deadBullet as SimpleBullet;
 			if (myMover != null)
