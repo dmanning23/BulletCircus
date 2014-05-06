@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using GameTimer;
+using System;
 
 namespace BulletCircus
 {
@@ -14,6 +15,11 @@ namespace BulletCircus
 		#region Members
 
 		List<SimpleBullet> Bullets { get; }
+
+		/// <summary>
+		/// event that is trigered whenever a bullet is removed
+		/// </summary>
+		event EventHandler<PositionEventArgs> BulletRemovedEvent;
 
 		#endregion //Members
 

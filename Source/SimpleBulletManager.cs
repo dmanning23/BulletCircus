@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System;
 
 namespace BulletCircus
 {
@@ -24,10 +25,15 @@ namespace BulletCircus
 
 		private List<SimpleBullet> TopBullets { get; set; }
 
-		public PositionDelegate GetPlayerPosition;
+		/// <summary>
+		/// event that is trigered whenever a bullet is removed
+		/// </summary>
+		public event EventHandler<PositionEventArgs> BulletRemovedEvent;
 
 		private float _timeSpeed = 1.0f;
 		private float _scale = 1.0f;
+
+		public PositionDelegate GetPlayerPosition;
 
 		#endregion //Members
 
@@ -242,6 +248,11 @@ namespace BulletCircus
 				if (!Bullets[i].Used)
 				{
 					//dont need to lock the list, because this isn't called in update loop
+
+					if (BulletRemovedEvent != null)
+					{
+						BulletRemovedEvent(this, new PositionEventArgs(Bullets[i].Position));
+					}
 
 					//remove from the list of bullets
 					Bullets.Remove(Bullets[i]);

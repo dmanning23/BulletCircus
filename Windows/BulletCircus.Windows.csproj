@@ -40,6 +40,9 @@
     <Compile Include="..\Source\ISimpleBulletManager.cs">
       <Link>ISimpleBulletManager.cs</Link>
     </Compile>
+    <Compile Include="..\Source\PositionEventArgs.cs">
+      <Link>PositionEventArgs.cs</Link>
+    </Compile>
     <Compile Include="..\Source\SimpleBullet.cs">
       <Link>SimpleBullet.cs</Link>
     </Compile>

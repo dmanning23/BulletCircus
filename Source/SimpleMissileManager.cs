@@ -1,4 +1,5 @@
 ﻿using BulletMLLib;
+using System;
 using GameTimer;
 using FlockBuddy;
 using Microsoft.Xna.Framework;
@@ -12,6 +13,11 @@ namespace BulletCircus
 		#region Members
 
 		private SimpleBulletManager BulletManager { get; set; }
+
+		/// <summary>
+		/// event that is trigered whenever a bullet is removed
+		/// </summary>
+		public event EventHandler<PositionEventArgs> BulletRemovedEvent;
 
 		#endregion //Members
 
@@ -168,6 +174,11 @@ namespace BulletCircus
 
 				if (!bullet.Used)
 				{
+					if (BulletRemovedEvent != null)
+					{
+						BulletRemovedEvent(this, new PositionEventArgs(Bullets[i].Position));
+					}
+
 					//remove from the flock also
 					RemoveBoid(bullet.MyBoid);
 				}
