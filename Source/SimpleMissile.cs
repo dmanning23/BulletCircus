@@ -8,7 +8,7 @@ namespace BulletCircus
 	/// <summary>
 	/// This class wraps up BulletMLLib.Bullet with the FlockBuddy.Boid and CollisionBuddy.Circle
 	/// </summary>
-	public class SimpleMissile : SimpleBullet
+	public class SimpleMissile : SimpleBullet, IMover
 	{
 		#region Members
 

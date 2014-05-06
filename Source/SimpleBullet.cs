@@ -4,15 +4,20 @@ using BulletMLLib;
 using CollisionBuddy;
 using Microsoft.Xna.Framework;
 using Vector2Extensions;
+using FlockBuddy;
 
 namespace BulletCircus
 {
 	/// <summary>
 	/// This class is a simple BuleltML.Bullet with collisionbuddy.circle
 	/// </summary>
-	public class SimpleBullet : Bullet
+	public class SimpleBullet : Bullet, IMover
 	{
 		#region Members
+
+		RoundRobinID _id = new RoundRobinID();
+
+		public int ID { get { return _id.ID; } }
 
 		/// <summary>
 		/// THe physics data for this guy
@@ -23,6 +28,7 @@ namespace BulletCircus
 		/// The poisition of this bullet.
 		/// </summary>
 		protected Vector2 _position = Vector2.Zero;
+		protected Vector2 _oldPosition = Vector2.Zero;
 
 		#endregion //Members
 
@@ -36,20 +42,77 @@ namespace BulletCircus
 		public override float X
 		{
 			get { return _position.X; }
-			set { _position.X = value; }
+			set 
+			{
+				_oldPosition.X = _position.Y;
+				_position.X = value; 
+			}
 		}
 
 		public override float Y
 		{
 			get { return _position.Y; }
-			set { _position.Y = value; }
+			set 
+			{
+				_oldPosition.Y = _position.Y;
+				_position.Y = value; 
+			}
 		}
 
+		/// <summary>
+		/// its location in the environment
+		/// Used by the cell space IMovingEntity thing
+		/// </summary>
 		public Vector2 Position
 		{
 			get
 			{
 				return _position;
+			}
+			set
+			{
+				_oldPosition = _position;
+				_position = value;
+			}
+		}
+
+		/// <summary>
+		/// its location in the environment
+		/// Used by the cell space IMovingEntity thing
+		/// </summary>
+		public Vector2 OldPosition 
+		{
+			get
+			{
+				return _oldPosition;
+			}
+			private set
+			{
+				_oldPosition = value;
+			}
+		}
+
+		public float BoundingRadius
+		{
+			get
+			{
+				return Physics.Radius;
+			}
+		}
+
+		public Vector2 Velocity
+		{
+			get
+			{
+				return (Heading * Speed * Scale) * 60.0f;
+			}
+		}
+
+		public Vector2 Heading
+		{
+			get
+			{
+				return Direction.ToVector2();
 			}
 		}
 		
@@ -82,6 +145,7 @@ namespace BulletCircus
 
 			//set the position of the bullet
 			_position = pos;
+			OldPosition = Position;
 
 			//set the orientation of the bullet
 			Direction = dir.Angle();
