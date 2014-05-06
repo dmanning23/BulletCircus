@@ -151,7 +151,7 @@ namespace BulletCircus
 			base.Update(curTime);
 
 			//update the bullet part of the dude
-			BulletManager.Update(curTime);
+			BulletManager.HalfUpdate(curTime);
 
 			FreeBullets();
 		}
@@ -170,13 +170,10 @@ namespace BulletCircus
 				{
 					//remove from the flock also
 					RemoveBoid(bullet.MyBoid);
-
-					//remove from the list of bullets
-					BulletManager.Bullets.Remove(bullet);
-
-					i--;
 				}
 			}
+
+			BulletManager.FreeBullets();
 		}
 
 		/// <summary>

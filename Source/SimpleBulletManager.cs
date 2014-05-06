@@ -187,7 +187,22 @@ namespace BulletCircus
 			}
 		}
 
+		/// <summary>
+		/// called from main game
+		/// </summary>
+		/// <param name="gameTime"></param>
 		public void Update(GameClock gameTime)
+		{
+			HalfUpdate(gameTime);
+
+			FreeBullets();
+		}
+
+		/// <summary>
+		/// called form missile manager
+		/// </summary>
+		/// <param name="gameTime"></param>
+		internal void HalfUpdate(GameClock gameTime)
 		{
 			//Update all the top bullets first
 			for (int i = 0; i < TopBullets.Count; i++)
@@ -215,14 +230,12 @@ namespace BulletCircus
 			{
 				Bullets[i].PostUpdate();
 			}
-
-			FreeBullets();
 		}
 
 		/// <summary>
 		/// Clean up all the unused/dead bullets.
 		/// </summary>
-		private void FreeBullets()
+		internal void FreeBullets()
 		{
 			for (int i = 0; i < Bullets.Count; i++)
 			{
