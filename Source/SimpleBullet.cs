@@ -1,10 +1,10 @@
 ﻿using BasicPrimitiveBuddy;
-using Microsoft.Xna.Framework.Graphics;
 using BulletMLLib;
 using CollisionBuddy;
-using Microsoft.Xna.Framework;
-using Vector2Extensions;
 using FlockBuddy;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Vector2Extensions;
 
 namespace BulletCircus
 {
@@ -173,7 +173,7 @@ namespace BulletCircus
 		/// <param name="color"></param>
 		public virtual void Render(IBasicPrimitive prim, Color color)
 		{
-			prim.Circle(Position, Physics.Radius, color);
+			prim.Circle(Position, BoundingRadius, color);
 		}
 
 		/// <summary>

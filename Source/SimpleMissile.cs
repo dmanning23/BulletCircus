@@ -12,12 +12,6 @@ namespace BulletCircus
 	{
 		#region Members
 
-		//TODO: inherit from boid
-
-		//TODO: create an ISimpleBullet interface and inherit from that
-		
-		//TODO: make SimpleBullet an instance
-
 		/// <summary>
 		/// The flocking object this dude will use
 		/// </summary>
