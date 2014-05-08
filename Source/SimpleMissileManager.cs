@@ -101,6 +101,18 @@ namespace BulletCircus
 			}
 		}
 
+		public Vector2 InitialVelocity
+		{
+			get
+			{
+				return BulletManager.InitialVelocity;
+			}
+			set
+			{
+				BulletManager.InitialVelocity = value;
+			}
+		}
+
 		#endregion //Properties
 
 		#region Methods
@@ -160,6 +172,15 @@ namespace BulletCircus
 			BulletManager.HalfUpdate(curTime);
 
 			FreeBullets();
+		}
+
+		/// <summary>
+		/// call this if you want the top bullets to stick to a particular item or something
+		/// </summary>
+		/// <param name="pos"></param>
+		public void UpdateTopBulletPositions(Vector2 pos)
+		{
+			BulletManager.UpdateTopBulletPositions(pos);
 		}
 
 		/// <summary>

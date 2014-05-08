@@ -31,11 +31,19 @@ namespace BulletCircus
 
 		float StartSpeed { get; set; }
 
+		Vector2 InitialVelocity { get; set; }
+
 		#endregion //Properties
 
 		#region Methods
 
 		void Update(GameClock gameTime);
+
+		/// <summary>
+		/// call this if you want the top bullets to stick to a particular item or something
+		/// </summary>
+		/// <param name="pos"></param>
+		void UpdateTopBulletPositions(Vector2 pos);
 
 		/// <summary>
 		/// remove all the bullets from play

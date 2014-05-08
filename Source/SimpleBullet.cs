@@ -133,7 +133,8 @@ namespace BulletCircus
 			float radius,
 			Vector2 dir,
 			float speed,
-			float bulletmlScale)
+			float bulletmlScale,
+			Vector2 initialVelocity)
 		{
 			Used = true;
 
@@ -152,6 +153,8 @@ namespace BulletCircus
 
 			//set the speed of the bullet
 			Speed = speed;
+
+			InitialVelocity = initialVelocity;
 
 			//create the physics data with 
 			Physics = new Circle(pos, radius);

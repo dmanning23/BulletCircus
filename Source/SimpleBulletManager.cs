@@ -93,6 +93,19 @@ namespace BulletCircus
 
 		public float StartSpeed { get; set; }
 
+		public Vector2 InitialVelocity { get; set; }
+
+		/// <summary>
+		/// convert the initial velocity from pixels/second to pixels/frame
+		/// </summary>
+		public Vector2 InitialBulletVelocity 
+		{ 
+			get
+			{
+				return InitialVelocity / 60.0f;
+			}
+		}
+
 		#endregion //Properties
 
 		#region Methods
@@ -141,7 +154,7 @@ namespace BulletCircus
 		public void InitBullet(SimpleBullet bullet)
 		{
 			//initialize the bullet
-			bullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale);
+			bullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale, InitialBulletVelocity);
 
 			//lock the list before adding the bullet
 			lock (_listLock)
@@ -156,7 +169,7 @@ namespace BulletCircus
 			SimpleBullet myBullet = new SimpleBullet(this);
 
 			//initialize the bullet
-			myBullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale);
+			myBullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale, InitialBulletVelocity);
 
 			//lock the list before adding the bullet
 			lock (_listLock)
@@ -175,7 +188,7 @@ namespace BulletCircus
 		public void InitTopBullet(SimpleBullet bullet)
 		{
 			//initialize the bullet
-			bullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale);
+			bullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale, InitialBulletVelocity);
 
 			//lock the list before adding the bullet
 			lock (_listLock)
@@ -202,6 +215,18 @@ namespace BulletCircus
 			HalfUpdate(gameTime);
 
 			FreeBullets();
+		}
+
+		/// <summary>
+		/// call this if you want the top bullets to stick to a particular item or something
+		/// </summary>
+		/// <param name="pos"></param>
+		public void UpdateTopBulletPositions(Vector2 pos)
+		{
+			for (int i = 0; i < TopBullets.Count; i++)
+			{
+				TopBullets[i].Position = pos;
+			}
 		}
 
 		/// <summary>

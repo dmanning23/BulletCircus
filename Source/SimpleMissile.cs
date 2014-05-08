@@ -58,7 +58,8 @@ namespace BulletCircus
 			float radius,
 			Vector2 dir,
 			float speed,
-			float bulletmlScale)
+			float bulletmlScale,
+			Vector2 initialVelocity)
 		{
 			//create the boid
 			MyBoid = new Boid(SimpleMissileManager, pos, radius, dir, speed, 1.0f, 500.0f, 10.0f, 100.0f);
@@ -75,7 +76,7 @@ namespace BulletCircus
 				});
 
 			//setup the bullet
-			base.Init(pos, radius, dir, speed, bulletmlScale);
+			base.Init(pos, radius, dir, speed, bulletmlScale, initialVelocity);
 
 			SetBoidToBullet();
 		}
