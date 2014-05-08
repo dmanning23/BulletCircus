@@ -169,13 +169,7 @@ namespace BulletCircus
 			SimpleBullet myBullet = new SimpleBullet(this);
 
 			//initialize the bullet
-			myBullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale, InitialBulletVelocity);
-
-			//lock the list before adding the bullet
-			lock (_listLock)
-			{
-				TopBullets.Add(myBullet);
-			}
+			InitTopBullet(myBullet);
 
 			//return the bullet we created
 			return myBullet;
@@ -188,7 +182,7 @@ namespace BulletCircus
 		public void InitTopBullet(SimpleBullet bullet)
 		{
 			//initialize the bullet
-			bullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale, InitialBulletVelocity);
+			bullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale, Vector2.Zero);
 
 			//lock the list before adding the bullet
 			lock (_listLock)
