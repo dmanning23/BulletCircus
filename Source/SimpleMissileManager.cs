@@ -231,6 +231,16 @@ namespace BulletCircus
 			bullet.InitTopNode(pattern.RootNode);
 		}
 
+		public void Tier(float tier)
+		{
+			BulletManager.Tier(tier);
+		}
+
+		public float Tier()
+		{
+			return BulletManager.Tier();
+		}
+
 		#endregion //Methods
 	}
 }

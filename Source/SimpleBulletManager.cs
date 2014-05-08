@@ -35,6 +35,8 @@ namespace BulletCircus
 
 		public PositionDelegate GetPlayerPosition;
 
+		private float _tier = 0.0f;
+
 		#endregion //Members
 
 		#region Properties
@@ -311,6 +313,16 @@ namespace BulletCircus
 			//add a new bullet in the center of the screen
 			var bullet = CreateTopBullet();
 			bullet.InitTopNode(pattern.RootNode);
+		}
+
+		public void Tier(float tier)
+		{
+			_tier = tier;
+		}
+
+		public float Tier()
+		{
+			return _tier;
 		}
 
 		#endregion //Methods

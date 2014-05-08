@@ -56,6 +56,13 @@ namespace BulletCircus
 		/// <param name="pattern"></param>
 		void Shoot(BulletPattern pattern);
 
+		/// <summary>
+		/// Set the tier
+		/// </summary>
+		/// <param name="tier"></param>
+		/// <returns></returns>
+		void Tier(float tier);
+
 		#endregion //Methods
 	}
 }
