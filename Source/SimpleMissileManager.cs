@@ -12,7 +12,7 @@ namespace BulletCircus
 	{
 		#region Members
 
-		private SimpleBulletManager BulletManager { get; set; }
+		protected SimpleBulletManager BulletManager { get; set; }
 
 		/// <summary>
 		/// event that is trigered whenever a bullet is removed
@@ -138,7 +138,7 @@ namespace BulletCircus
 		/// Create a new bullet.
 		/// </summary>
 		/// <returns>A shiny new bullet</returns>
-		public IBullet CreateBullet()
+        public virtual IBullet CreateBullet()
 		{
 			//create the new bullet
 			SimpleMissile myBullet = new SimpleMissile(this);
@@ -148,7 +148,7 @@ namespace BulletCircus
 			return myBullet;
 		}
 
-		public IBullet CreateTopBullet()
+		public virtual IBullet CreateTopBullet()
 		{
 			//create the new bullet
 			SimpleMissile myBullet = new SimpleMissile(this);

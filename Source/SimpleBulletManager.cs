@@ -198,7 +198,7 @@ namespace BulletCircus
 			var myMover = deadBullet as SimpleBullet;
 			if (myMover != null)
 			{
-				myMover.Used = false;
+                myMover.KillBullet();
 			}
 		}
 

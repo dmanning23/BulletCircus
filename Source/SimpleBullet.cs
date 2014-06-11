@@ -37,7 +37,7 @@ namespace BulletCircus
 		/// <summary>
 		/// Whether or not this dude is still valid, or should be removed from the game
 		/// </summary>
-		public bool Used { get; set; }
+		public bool Used { get; private set; }
 
 		public override float X
 		{
@@ -190,6 +190,14 @@ namespace BulletCircus
 		{
 			sprite.Render(spriteBatch, this, color);
 		}
+
+        /// <summary>
+        /// Call this method to kill a bullet.
+        /// </summary>
+        public virtual void KillBullet()
+        {
+            Used = false;
+        }
 
 		#endregion //Methods
 	}
