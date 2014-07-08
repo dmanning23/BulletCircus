@@ -72,7 +72,7 @@ namespace BulletCircus
 					EBehaviorType.obstacle_avoidance,
 					EBehaviorType.wall_avoidance,
 					EBehaviorType.pursuit,
-					EBehaviorType.flee
+					EBehaviorType.evade
 				});
 
 			//setup the bullet
