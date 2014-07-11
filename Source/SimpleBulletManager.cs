@@ -37,6 +37,11 @@ namespace BulletCircus
 
 		private float _tier = 0.0f;
 
+		/// <summary>
+		/// The size our bullets will be created with.
+		/// </summary>
+		private float _bulletRadius = 10.0f;
+
 		#endregion //Members
 
 		#region Properties
@@ -108,6 +113,18 @@ namespace BulletCircus
 			}
 		}
 
+		public virtual float BulletRadius
+		{
+			get
+			{
+				return _bulletRadius;
+			}
+			set
+			{
+				_bulletRadius = value;
+			}
+		}
+
 		#endregion //Properties
 
 		#region Methods
@@ -156,7 +173,7 @@ namespace BulletCircus
 		public void InitBullet(SimpleBullet bullet)
 		{
 			//initialize the bullet
-			bullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale, InitialBulletVelocity);
+			bullet.Init(StartPosition, BulletRadius, StartHeading, StartSpeed, Scale, InitialBulletVelocity);
 
 			//lock the list before adding the bullet
 			lock (_listLock)
@@ -184,7 +201,7 @@ namespace BulletCircus
 		public void InitTopBullet(SimpleBullet bullet)
 		{
 			//initialize the bullet
-			bullet.Init(StartPosition, 10.0f, StartHeading, StartSpeed, Scale, Vector2.Zero);
+			bullet.Init(StartPosition, BulletRadius, StartHeading, StartSpeed, Scale, Vector2.Zero);
 
 			//lock the list before adding the bullet
 			lock (_listLock)

@@ -1,6 +1,7 @@
 ﻿using BasicPrimitiveBuddy;
 using FlockBuddy;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Vector2Extensions;
 
 namespace BulletCircus
@@ -62,7 +63,7 @@ namespace BulletCircus
 			Vector2 initialVelocity)
 		{
 			//create the boid
-			MyBoid = new Boid(SimpleMissileManager, pos, radius, dir, speed, 1.0f, 500.0f, 10.0f, 100.0f);
+			MyBoid = new Boid(SimpleMissileManager, pos, radius, dir, speed);
 
 			//setup his behaviors
 			MyBoid.Behaviors.ActivateBehaviors(new EBehaviorType[] {

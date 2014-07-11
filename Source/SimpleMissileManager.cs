@@ -113,6 +113,20 @@ namespace BulletCircus
 			}
 		}
 
+		public virtual float BulletRadius
+		{
+			get
+			{
+				return BulletManager.BulletRadius;
+			}
+			set
+			{
+				//make sure to set the radius of the boid too
+				BoidTemplate.Radius = value;
+				BulletManager.BulletRadius = value;
+			}
+		}
+
 		#endregion //Properties
 
 		#region Methods
