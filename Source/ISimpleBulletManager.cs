@@ -1,8 +1,8 @@
 ﻿using BulletMLLib;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using GameTimer;
+using Microsoft.Xna.Framework;
 using System;
+using System.Collections.Generic;
 
 namespace BulletCircus
 {

@@ -1,8 +1,8 @@
 ﻿using BulletMLLib;
-using System;
-using GameTimer;
 using FlockBuddy;
+using GameTimer;
 using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
