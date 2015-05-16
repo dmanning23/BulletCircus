@@ -337,7 +337,7 @@ namespace BulletCircus
 			_tier = tier;
 		}
 
-		public float Tier()
+		public double Tier()
 		{
 			return _tier;
 		}

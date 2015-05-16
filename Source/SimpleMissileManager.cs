@@ -250,7 +250,7 @@ namespace BulletCircus
 			BulletManager.Tier(tier);
 		}
 
-		public float Tier()
+		public double Tier()
 		{
 			return BulletManager.Tier();
 		}
