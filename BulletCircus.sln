@@ -15,6 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletCircus.WindowsUnivers
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletCircus.Tests", "BulletCircus.Tests\BulletCircus.Tests.csproj", "{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B68F0A0F-00BB-41AD-B34A-CDFC24199A1D}"
+	ProjectSection(SolutionItems) = preProject
+		buildNugetPackages.ps1 = buildNugetPackages.ps1
+		BulletCircus.nuspec = BulletCircus.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		BulletCircus.SharedProject\BulletCircus.SharedProject.projitems*{0ae5b97a-997c-4d67-bd27-378b9b7171f2}*SharedItemsImports = 4
