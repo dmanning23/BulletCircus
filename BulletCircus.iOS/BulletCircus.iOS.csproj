@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BulletMLLib.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BulletMLLib.1.0.4\lib\Xamarin.iOS10\BulletMLLib.iOS.dll</HintPath>
+      <HintPath>..\packages\BulletMLLib.1.0.5\lib\Xamarin.iOS10\BulletMLLib.iOS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CellSpacePartition.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -44,15 +44,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Equationator.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Equationator.1.0.4\lib\Xamarin.iOS10\Equationator.iOS.dll</HintPath>
+      <HintPath>..\packages\Equationator.1.0.5\lib\Xamarin.iOS10\Equationator.iOS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FlockBuddy.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FlockBuddy.1.0.5\lib\Xamarin.iOS10\FlockBuddy.iOS.dll</HintPath>
+      <HintPath>..\packages\FlockBuddy.1.0.6\lib\Xamarin.iOS10\FlockBuddy.iOS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GameTimer.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GameTimer.1.0.1\lib\Xamarin.iOS10\GameTimer.iOS.dll</HintPath>
+      <HintPath>..\packages\GameTimer.1.0.4\lib\Xamarin.iOS10\GameTimer.iOS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MatrixExtensions.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -64,7 +64,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="PrimitiveBuddy.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PrimitiveBuddy.1.0.2\lib\Xamarin.iOS10\PrimitiveBuddy.iOS.dll</HintPath>
+      <HintPath>..\packages\PrimitiveBuddy.1.0.3\lib\Xamarin.iOS10\PrimitiveBuddy.iOS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="RandomExtensions.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -79,7 +79,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Vector2Extensions.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vector2Extensions.1.0.6\lib\Xamarin.iOS10\Vector2Extensions.iOS.dll</HintPath>
+      <HintPath>..\packages\Vector2Extensions.1.0.8\lib\Xamarin.iOS10\Vector2Extensions.iOS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.iOS" />
