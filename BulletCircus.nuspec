@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
 		<id>BulletCircus</id>
-		<version>1.0.1</version>
+		<version>1.0.3</version>
 		<title>BulletCircus</title>
 		<authors>dmanning23</authors>
 		<owners>dmanning23</owners>
@@ -17,11 +17,11 @@
 
 			<!--Xamarin.Android-->
 			<group targetFramework="MonoAndroid10">
-				<dependency id="MonoGame.Framework.Android" version="3.5"/>
-        <dependency id="BulletMLLib" version="1.0"/>
+				<dependency id="MonoGame.Framework.Android" version="3.6"/>
+				<dependency id="BulletMLLib" version="1.0"/>
 				<dependency id="CellSpacePartition" version="1.0"/>
 				<dependency id="CollisionBuddy" version="1.0"/>
-        <dependency id="Equationator" version="1.0"/>
+				<dependency id="Equationator" version="1.0"/>
 				<dependency id="GameTimer" version="1.0"/>
 				<dependency id="MatrixExtensions" version="1.0.1"/>
 				<dependency id="PrimitiveBuddy" version="1.0"/>
@@ -32,11 +32,11 @@
 
 			<!--Xamarin.iOS Unified-->
 			<group targetFramework="Xamarin.iOS10">
-				<dependency id="MonoGame.Framework.iOS" version="3.5"/>
-        <dependency id="BulletMLLib" version="1.0"/>
-        <dependency id="CellSpacePartition" version="1.0"/>
-        <dependency id="CollisionBuddy" version="1.0"/>
-        <dependency id="Equationator" version="1.0"/>
+				<dependency id="MonoGame.Framework.iOS" version="3.6"/>
+				<dependency id="BulletMLLib" version="1.0"/>
+				<dependency id="CellSpacePartition" version="1.0"/>
+				<dependency id="CollisionBuddy" version="1.0"/>
+				<dependency id="Equationator" version="1.0"/>
 				<dependency id="GameTimer" version="1.0"/>
 				<dependency id="MatrixExtensions" version="1.0.1"/>
 				<dependency id="PrimitiveBuddy" version="1.0"/>
@@ -47,12 +47,12 @@
 
 			<!--Win Universal-->
 			<group targetFramework="uap10.0">
-				<dependency id="MonoGame.Framework.WindowsUniversal" version="3.5"/>
+				<dependency id="MonoGame.Framework.WindowsUniversal" version="3.6"/>
 				<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.1"/>
-        <dependency id="BulletMLLib" version="1.0"/>
-        <dependency id="CellSpacePartition" version="1.0"/>
-        <dependency id="CollisionBuddy" version="1.0"/>
-        <dependency id="Equationator" version="1.0"/>
+				<dependency id="BulletMLLib" version="1.0"/>
+				<dependency id="CellSpacePartition" version="1.0"/>
+				<dependency id="CollisionBuddy" version="1.0"/>
+				<dependency id="Equationator" version="1.0"/>
 				<dependency id="GameTimer" version="1.0"/>
 				<dependency id="MatrixExtensions" version="1.0.1"/>
 				<dependency id="PrimitiveBuddy" version="1.0"/>
@@ -62,11 +62,11 @@
 			</group>
 
 			<group targetFramework="net451">
-				<dependency id="MonoGame.Framework.DesktopGL" version="3.5"/>
-        <dependency id="BulletMLLib" version="1.0"/>
-        <dependency id="CellSpacePartition" version="1.0"/>
-        <dependency id="CollisionBuddy" version="1.0"/>
-        <dependency id="Equationator" version="1.0"/>
+				<dependency id="MonoGame.Framework.WindowsDX" version="3.6"/>
+				<dependency id="BulletMLLib" version="1.0"/>
+				<dependency id="CellSpacePartition" version="1.0"/>
+				<dependency id="CollisionBuddy" version="1.0"/>
+				<dependency id="Equationator" version="1.0"/>
 				<dependency id="GameTimer" version="1.0"/>
 				<dependency id="MatrixExtensions" version="1.0.1"/>
 				<dependency id="PrimitiveBuddy" version="1.0"/>
@@ -91,9 +91,9 @@
 		<file src="BulletCircus.WindowsUniversal\bin\Release\BulletCircus.WindowsUniversal.pdb" target="lib\uap10.0\BulletCircus.WindowsUniversal.pdb" />
 		<file src="BulletCircus.WindowsUniversal\bin\Release\BulletCircus.WindowsUniversal.dll" target="lib\uap10.0\BulletCircus.WindowsUniversal.dll" />
 
-		<!--DesktopGL-->
-		<file src="BulletCircus.DesktopGL\bin\Release\BulletCircus.DesktopGL.pdb" target="lib\net451\BulletCircus.DesktopGL.pdb" />
-		<file src="BulletCircus.DesktopGL\bin\Release\BulletCircus.DesktopGL.dll" target="lib\net451\BulletCircus.DesktopGL.dll" />
+		<!--WindowsDX-->
+		<file src="BulletCircus.WindowsDX\bin\Release\BulletCircus.WindowsDX.pdb" target="lib\net451\BulletCircus.WindowsDX.pdb" />
+		<file src="BulletCircus.WindowsDX\bin\Release\BulletCircus.WindowsDX.dll" target="lib\net451\BulletCircus.WindowsDX.dll" />
 
 	</files>
 </package>
