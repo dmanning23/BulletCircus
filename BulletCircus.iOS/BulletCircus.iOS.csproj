@@ -35,20 +35,19 @@
       <HintPath>..\packages\BulletMLLib.1.0.8\lib\Xamarin.iOS10\BulletMLLib.iOS.dll</HintPath>
     </Reference>
     <Reference Include="CellSpacePartition.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CellSpacePartition.1.0.2\lib\Xamarin.iOS10\CellSpacePartition.iOS.dll</HintPath>
+      <HintPath>..\packages\CellSpacePartition.1.0.3\lib\Xamarin.iOS10\CellSpacePartition.iOS.dll</HintPath>
     </Reference>
     <Reference Include="CollisionBuddy.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CollisionBuddy.1.0.4\lib\Xamarin.iOS10\CollisionBuddy.iOS.dll</HintPath>
+      <HintPath>..\packages\CollisionBuddy.1.0.5\lib\Xamarin.iOS10\CollisionBuddy.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Equationator.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Equationator.1.0.5\lib\Xamarin.iOS10\Equationator.iOS.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Equationator.1.0.6\lib\Xamarin.iOS10\Equationator.iOS.dll</HintPath>
     </Reference>
     <Reference Include="FilenameBuddy.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FilenameBuddy.1.0.9\lib\Xamarin.iOS10\FilenameBuddy.iOS.dll</HintPath>
+      <HintPath>..\packages\FilenameBuddy.1.0.12\lib\Xamarin.iOS10\FilenameBuddy.iOS.dll</HintPath>
     </Reference>
     <Reference Include="FlockBuddy.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FlockBuddy.1.0.7\lib\Xamarin.iOS10\FlockBuddy.iOS.dll</HintPath>
+      <HintPath>..\packages\FlockBuddy.1.0.8\lib\Xamarin.iOS10\FlockBuddy.iOS.dll</HintPath>
     </Reference>
     <Reference Include="GameTimer.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GameTimer.1.0.8\lib\Xamarin.iOS10\GameTimer.iOS.dll</HintPath>
@@ -63,7 +62,7 @@
       <HintPath>..\packages\PrimitiveBuddy.1.0.4\lib\Xamarin.iOS10\PrimitiveBuddy.iOS.dll</HintPath>
     </Reference>
     <Reference Include="RandomExtensions.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RandomExtensions.dmanning23.1.0.4\lib\Xamarin.iOS10\RandomExtensions.iOS.dll</HintPath>
+      <HintPath>..\packages\RandomExtensions.dmanning23.1.0.5\lib\Xamarin.iOS10\RandomExtensions.iOS.dll</HintPath>
     </Reference>
     <Reference Include="RectangleF.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RectangleF.1.0.1\lib\Xamarin.iOS10\RectangleF.iOS.dll</HintPath>
@@ -72,7 +71,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Vector2Extensions.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vector2Extensions.1.0.9\lib\Xamarin.iOS10\Vector2Extensions.iOS.dll</HintPath>
+      <HintPath>..\packages\Vector2Extensions.1.0.11\lib\Xamarin.iOS10\Vector2Extensions.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
