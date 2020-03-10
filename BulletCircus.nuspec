@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
 		<id>BulletCircus</id>
-		<version>1.0.3</version>
+		<version>2.0.1</version>
 		<title>BulletCircus</title>
 		<authors>dmanning23</authors>
 		<owners>dmanning23</owners>
@@ -45,22 +45,6 @@
 				<dependency id="Vector2Extensions" version="1.0.1"/>
 			</group>
 
-			<!--Win Universal-->
-			<group targetFramework="uap10.0">
-				<dependency id="MonoGame.Framework.WindowsUniversal" version="3.6"/>
-				<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.1"/>
-				<dependency id="BulletMLLib" version="1.0"/>
-				<dependency id="CellSpacePartition" version="1.0"/>
-				<dependency id="CollisionBuddy" version="1.0"/>
-				<dependency id="Equationator" version="1.0"/>
-				<dependency id="GameTimer" version="1.0"/>
-				<dependency id="MatrixExtensions" version="1.0.1"/>
-				<dependency id="PrimitiveBuddy" version="1.0"/>
-				<dependency id="RandomExtensions.dmanning23" version="1.0"/>
-				<dependency id="RectangleF" version="1.0"/>
-				<dependency id="Vector2Extensions" version="1.0.1"/>
-			</group>
-
 			<group targetFramework="net451">
 				<dependency id="MonoGame.Framework.WindowsDX" version="3.6"/>
 				<dependency id="BulletMLLib" version="1.0"/>
@@ -86,10 +70,6 @@
 		<!--Xamarin.iOS Unified-->
 		<file src="BulletCircus.iOS\bin\Release\BulletCircus.iOS.pdb" target="lib\Xamarin.iOS10\BulletCircus.iOS.pdb" />
 		<file src="BulletCircus.iOS\bin\Release\BulletCircus.iOS.dll" target="lib\Xamarin.iOS10\BulletCircus.iOS.dll" />
-
-		<!--Windows Universal-->
-		<file src="BulletCircus.WindowsUniversal\bin\Release\BulletCircus.WindowsUniversal.pdb" target="lib\uap10.0\BulletCircus.WindowsUniversal.pdb" />
-		<file src="BulletCircus.WindowsUniversal\bin\Release\BulletCircus.WindowsUniversal.dll" target="lib\uap10.0\BulletCircus.WindowsUniversal.dll" />
 
 		<!--WindowsDX-->
 		<file src="BulletCircus.WindowsDX\bin\Release\BulletCircus.WindowsDX.pdb" target="lib\net451\BulletCircus.WindowsDX.pdb" />

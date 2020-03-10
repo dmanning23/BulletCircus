@@ -212,6 +212,8 @@ namespace BulletCircus
 			}
 		}
 
+		public float Laziness { get => MyBoid.Laziness; set => MyBoid.Laziness = value; }
+
 		#endregion //Properties
 
 		#region Methods
@@ -284,14 +286,19 @@ namespace BulletCircus
 			MyBoid.Heading = Direction.ToVector2();
 		}
 
-		public void AddBehavior(EBehaviorType behaviorType, float weight)
-		{
-			MyBoid.AddBehavior(behaviorType, weight);
-		}
-
 		public void AddBehavior(IBehavior behavior)
 		{
 			MyBoid.AddBehavior(behavior);
+		}
+
+		public IBehavior AddBehavior(EBehaviorType behaviorType, float weight)
+		{
+			return MyBoid.AddBehavior(behaviorType, weight);
+		}
+
+		public void RemoveBehavior(IBehavior behavior)
+		{
+			MyBoid.RemoveBehavior(behavior);
 		}
 
 		public void RemoveBehavior(EBehaviorType behaviorType)

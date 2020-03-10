@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BulletCircus.SharedProject", "BulletCircus.SharedProject\BulletCircus.SharedProject.shproj", "{5B33FAC8-0225-4C94-A3C3-AA20D02BF4B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletCircus.Android", "BulletCircus.Android\BulletCircus.Android.csproj", "{0AE5B97A-997C-4D67-BD27-378B9B7171F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletCircus.iOS", "BulletCircus.iOS\BulletCircus.iOS.csproj", "{ED1FD53E-E4FA-4475-9D2E-854FD4A4A96B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletCircus.WindowsUniversal", "BulletCircus.WindowsUniversal\BulletCircus.WindowsUniversal.csproj", "{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletCircus.Tests", "BulletCircus.Tests\BulletCircus.Tests.csproj", "{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}"
 EndProject
@@ -26,7 +24,6 @@ Global
 		BulletCircus.SharedProject\BulletCircus.SharedProject.projitems*{0ae5b97a-997c-4d67-bd27-378b9b7171f2}*SharedItemsImports = 4
 		BulletCircus.SharedProject\BulletCircus.SharedProject.projitems*{5b33fac8-0225-4c94-a3c3-aa20d02bf4b5}*SharedItemsImports = 13
 		BulletCircus.SharedProject\BulletCircus.SharedProject.projitems*{65b91b92-8acb-4488-a300-e3296d0d6650}*SharedItemsImports = 4
-		BulletCircus.SharedProject\BulletCircus.SharedProject.projitems*{86ffa1dd-4ac5-4481-9a6e-cc776bbe5831}*SharedItemsImports = 4
 		BulletCircus.SharedProject\BulletCircus.SharedProject.projitems*{ed1fd53e-e4fa-4475-9d2e-854fd4a4a96b}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,22 +69,6 @@ Global
 		{ED1FD53E-E4FA-4475-9D2E-854FD4A4A96B}.Release|x64.Build.0 = Release|Any CPU
 		{ED1FD53E-E4FA-4475-9D2E-854FD4A4A96B}.Release|x86.ActiveCfg = Release|Any CPU
 		{ED1FD53E-E4FA-4475-9D2E-854FD4A4A96B}.Release|x86.Build.0 = Release|Any CPU
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Debug|ARM.ActiveCfg = Debug|ARM
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Debug|ARM.Build.0 = Debug|ARM
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Debug|x64.ActiveCfg = Debug|x64
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Debug|x64.Build.0 = Debug|x64
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Debug|x86.ActiveCfg = Debug|x86
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Debug|x86.Build.0 = Debug|x86
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Release|ARM.ActiveCfg = Release|ARM
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Release|ARM.Build.0 = Release|ARM
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Release|x64.ActiveCfg = Release|x64
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Release|x64.Build.0 = Release|x64
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Release|x86.ActiveCfg = Release|x86
-		{86FFA1DD-4AC5-4481-9A6E-CC776BBE5831}.Release|x86.Build.0 = Release|x86
 		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F97DDA18-E8C1-4CBB-90AA-0BF573A36FE3}.Debug|ARM.ActiveCfg = Debug|Any CPU
