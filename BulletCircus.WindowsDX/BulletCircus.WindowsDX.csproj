@@ -34,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BulletMLLib.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BulletMLLib.2.0.1\lib\net451\BulletMLLib.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\BulletMLLib.2.0.2\lib\net451\BulletMLLib.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="CellSpacePartition.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CellSpacePartition.2.0.2\lib\net451\CellSpacePartition.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\CellSpacePartition.2.0.4\lib\net451\CellSpacePartition.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="CollisionBuddy.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CollisionBuddy.2.0.2\lib\net451\CollisionBuddy.WindowsDX.dll</HintPath>
@@ -49,10 +49,10 @@
       <HintPath>..\packages\FilenameBuddy.2.0.8\lib\net452\FilenameBuddy.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="FlockBuddy.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FlockBuddy.2.0.8\lib\net451\FlockBuddy.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\FlockBuddy.2.0.13\lib\net451\FlockBuddy.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="GameTimer.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GameTimer.2.0.0\lib\net452\GameTimer.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\GameTimer.2.2.0\lib\net452\GameTimer.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="MatrixExtensions.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MatrixExtensions.2.0.0\lib\net451\MatrixExtensions.WindowsDX.dll</HintPath>
@@ -61,10 +61,10 @@
       <HintPath>..\packages\MonoGame.Framework.WindowsDX.3.7.1.189\lib\net45\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="PrimitiveBuddy.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PrimitiveBuddy.2.0.0\lib\net451\PrimitiveBuddy.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\PrimitiveBuddy.2.0.1\lib\net451\PrimitiveBuddy.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="RandomExtensions.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RandomExtensions.dmanning23.2.0.0\lib\net452\RandomExtensions.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\RandomExtensions.dmanning23.2.0.1\lib\net452\RandomExtensions.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="RectangleF.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RectangleF.2.0.0\lib\net451\RectangleF.WindowsDX.dll</HintPath>

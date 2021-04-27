@@ -25,6 +25,7 @@ Global
 		BulletCircus.SharedProject\BulletCircus.SharedProject.projitems*{5b33fac8-0225-4c94-a3c3-aa20d02bf4b5}*SharedItemsImports = 13
 		BulletCircus.SharedProject\BulletCircus.SharedProject.projitems*{65b91b92-8acb-4488-a300-e3296d0d6650}*SharedItemsImports = 4
 		BulletCircus.SharedProject\BulletCircus.SharedProject.projitems*{ed1fd53e-e4fa-4475-9d2e-854fd4a4a96b}*SharedItemsImports = 4
+		BulletCircus.SharedProject\BulletCircus.SharedProject.projitems*{f97dda18-e8c1-4cbb-90aa-0bf573a36fe3}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

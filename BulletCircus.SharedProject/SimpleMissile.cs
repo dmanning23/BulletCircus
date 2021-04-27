@@ -213,6 +213,8 @@ namespace BulletCircus
 		}
 
 		public float Laziness { get => MyBoid.Laziness; set => MyBoid.Laziness = value; }
+		ESummingMethod IBoid.SummingMethod { get => MyBoid.SummingMethod; set => MyBoid.SummingMethod = value; }
+		float IBoid.RetargetTime { get => MyBoid.RetargetTime; set => MyBoid.RetargetTime = value; }
 
 		#endregion //Properties
 
