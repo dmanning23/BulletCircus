@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BulletMLLib.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BulletMLLib.2.0.2\lib\Xamarin.iOS10\BulletMLLib.iOS.dll</HintPath>
+      <HintPath>..\packages\BulletMLLib.2.0.5\lib\Xamarin.iOS10\BulletMLLib.iOS.dll</HintPath>
     </Reference>
     <Reference Include="CellSpacePartition.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CellSpacePartition.2.0.4\lib\Xamarin.iOS10\CellSpacePartition.iOS.dll</HintPath>
@@ -43,13 +43,13 @@
       <HintPath>..\packages\CollisionBuddy.2.0.2\lib\Xamarin.iOS10\CollisionBuddy.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Equationator.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Equationator.1.0.7\lib\Xamarin.iOS10\Equationator.iOS.dll</HintPath>
+      <HintPath>..\packages\Equationator.1.0.10\lib\Xamarin.iOS10\Equationator.iOS.dll</HintPath>
     </Reference>
     <Reference Include="FilenameBuddy.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FilenameBuddy.2.0.8\lib\Xamarin.iOS10\FilenameBuddy.iOS.dll</HintPath>
     </Reference>
     <Reference Include="FlockBuddy.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FlockBuddy.2.0.13\lib\Xamarin.iOS10\FlockBuddy.iOS.dll</HintPath>
+      <HintPath>..\packages\FlockBuddy.2.0.15\lib\Xamarin.iOS10\FlockBuddy.iOS.dll</HintPath>
     </Reference>
     <Reference Include="GameTimer.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GameTimer.2.2.0\lib\Xamarin.iOS10\GameTimer.iOS.dll</HintPath>

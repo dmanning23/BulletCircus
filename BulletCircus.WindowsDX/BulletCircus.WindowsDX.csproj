@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BulletMLLib.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BulletMLLib.2.0.2\lib\net451\BulletMLLib.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\BulletMLLib.2.0.5\lib\net451\BulletMLLib.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="CellSpacePartition.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CellSpacePartition.2.0.4\lib\net451\CellSpacePartition.WindowsDX.dll</HintPath>
@@ -43,13 +43,13 @@
       <HintPath>..\packages\CollisionBuddy.2.0.2\lib\net451\CollisionBuddy.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="Equationator.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Equationator.1.0.7\lib\net451\Equationator.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\Equationator.1.0.10\lib\net451\Equationator.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="FilenameBuddy.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FilenameBuddy.2.0.8\lib\net452\FilenameBuddy.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="FlockBuddy.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FlockBuddy.2.0.13\lib\net451\FlockBuddy.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\FlockBuddy.2.0.15\lib\net451\FlockBuddy.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="GameTimer.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GameTimer.2.2.0\lib\net452\GameTimer.WindowsDX.dll</HintPath>

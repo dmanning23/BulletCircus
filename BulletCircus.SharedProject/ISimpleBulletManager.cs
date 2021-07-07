@@ -12,18 +12,12 @@ namespace BulletCircus
 	/// </summary>
 	public interface ISimpleBulletManager : IBulletManager
 	{
-		#region Members
-
 		List<SimpleBullet> Bullets { get; }
 
 		/// <summary>
 		/// event that is trigered whenever a bullet is removed
 		/// </summary>
 		event EventHandler<PositionEventArgs> BulletRemovedEvent;
-
-		#endregion //Members
-
-		#region Properties
 
 		Vector2 StartPosition { get; set; }
 
@@ -32,10 +26,6 @@ namespace BulletCircus
 		float StartSpeed { get; set; }
 
 		Vector2 InitialVelocity { get; set; }
-
-		#endregion //Properties
-
-		#region Methods
 
 		void Update(GameClock gameTime);
 
@@ -55,14 +45,5 @@ namespace BulletCircus
 		/// </summary>
 		/// <param name="pattern"></param>
 		void Shoot(BulletPattern pattern);
-
-		/// <summary>
-		/// Set the tier
-		/// </summary>
-		/// <param name="tier"></param>
-		/// <returns></returns>
-		void Tier(float tier);
-
-		#endregion //Methods
 	}
 }

@@ -1,6 +1,6 @@
-﻿using PrimitiveBuddy;
-using FlockBuddy;
+﻿using FlockBuddy;
 using Microsoft.Xna.Framework;
+using PrimitiveBuddy;
 using Vector2Extensions;
 
 namespace BulletCircus

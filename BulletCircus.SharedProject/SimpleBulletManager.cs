@@ -1,10 +1,11 @@
 ﻿using BulletMLLib;
+using Equationator;
 using GameTimer;
 using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using System;
 
 namespace BulletCircus
 {
@@ -14,12 +15,14 @@ namespace BulletCircus
 	/// </summary>
 	public class SimpleBulletManager : ISimpleBulletManager
 	{
-		#region Members
+		#region Properties
 
 		/// <summary>
 		/// crappy object for locking the list
 		/// </summary>
 		private object _listLock = new object();
+
+		public Random Rand { get; private set; } = new Random();
 
 		public List<SimpleBullet> Bullets { get; private set; }
 
@@ -35,16 +38,10 @@ namespace BulletCircus
 
 		public PositionDelegate GetPlayerPosition;
 
-		private float _tier = 0.0f;
-
 		/// <summary>
 		/// The size our bullets will be created with.
 		/// </summary>
 		private float _bulletRadius = 10.0f;
-
-		#endregion //Members
-
-		#region Properties
 
 		/// <summary>
 		/// How fast time moves in this game.
@@ -124,6 +121,10 @@ namespace BulletCircus
 				_bulletRadius = value;
 			}
 		}
+
+		public Dictionary<string, FunctionDelegate> CallbackFunctions { get; private set; } = new Dictionary<string, FunctionDelegate>();
+
+		public FunctionDelegate GameDifficulty => () => 1f;
 
 		#endregion //Properties
 
@@ -330,16 +331,6 @@ namespace BulletCircus
 			//add a new bullet in the center of the screen
 			var bullet = CreateTopBullet();
 			bullet.InitTopNode(pattern.RootNode);
-		}
-
-		public void Tier(float tier)
-		{
-			_tier = tier;
-		}
-
-		public double Tier()
-		{
-			return _tier;
 		}
 
 		#endregion //Methods

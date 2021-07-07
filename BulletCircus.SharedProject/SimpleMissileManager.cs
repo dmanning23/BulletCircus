@@ -1,4 +1,5 @@
 ﻿using BulletMLLib;
+using Equationator;
 using FlockBuddy;
 using GameTimer;
 using Microsoft.Xna.Framework;
@@ -10,7 +11,9 @@ namespace BulletCircus
 {
 	public class SimpleMissileManager : Flock, ISimpleBulletManager
 	{
-		#region Members
+		#region Properties
+
+		public Random Rand { get; private set; } = new Random();
 
 		protected SimpleBulletManager BulletManager { get; set; }
 
@@ -18,10 +21,6 @@ namespace BulletCircus
 		/// event that is trigered whenever a bullet is removed
 		/// </summary>
 		public event EventHandler<PositionEventArgs> BulletRemovedEvent;
-
-		#endregion //Members
-
-		#region Properties
 
 		public List<SimpleBullet> Bullets
 		{
@@ -125,6 +124,10 @@ namespace BulletCircus
 				BulletManager.BulletRadius = value;
 			}
 		}
+
+		public Dictionary<string, FunctionDelegate> CallbackFunctions => BulletManager.CallbackFunctions;
+
+		public FunctionDelegate GameDifficulty => BulletManager.GameDifficulty;
 
 		#endregion //Properties
 
@@ -242,16 +245,6 @@ namespace BulletCircus
 			//add a new bullet in the center of the screen
 			var bullet = CreateTopBullet();
 			bullet.InitTopNode(pattern.RootNode);
-		}
-
-		public void Tier(float tier)
-		{
-			BulletManager.Tier(tier);
-		}
-
-		public double Tier()
-		{
-			return BulletManager.Tier();
 		}
 
 		#endregion //Methods

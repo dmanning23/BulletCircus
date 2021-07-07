@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BulletMLLib.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BulletMLLib.2.0.2\lib\MonoAndroid10\BulletMLLib.Android.dll</HintPath>
+      <HintPath>..\packages\BulletMLLib.2.0.5\lib\MonoAndroid10\BulletMLLib.Android.dll</HintPath>
     </Reference>
     <Reference Include="CellSpacePartition.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CellSpacePartition.2.0.4\lib\MonoAndroid10\CellSpacePartition.Android.dll</HintPath>
@@ -46,13 +46,13 @@
       <HintPath>..\packages\CollisionBuddy.2.0.2\lib\MonoAndroid10\CollisionBuddy.Android.dll</HintPath>
     </Reference>
     <Reference Include="Equationator.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Equationator.1.0.7\lib\MonoAndroid10\Equationator.Android.dll</HintPath>
+      <HintPath>..\packages\Equationator.1.0.10\lib\MonoAndroid10\Equationator.Android.dll</HintPath>
     </Reference>
     <Reference Include="FilenameBuddy.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FilenameBuddy.2.0.8\lib\MonoAndroid10\FilenameBuddy.Android.dll</HintPath>
     </Reference>
     <Reference Include="FlockBuddy.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FlockBuddy.2.0.13\lib\MonoAndroid10\FlockBuddy.Android.dll</HintPath>
+      <HintPath>..\packages\FlockBuddy.2.0.15\lib\MonoAndroid10\FlockBuddy.Android.dll</HintPath>
     </Reference>
     <Reference Include="GameTimer.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GameTimer.2.2.0\lib\MonoAndroid10\GameTimer.Android.dll</HintPath>
