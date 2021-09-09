@@ -20,6 +20,8 @@ namespace BulletCircus
 
 		Vector2 Offset { get; set; }
 
+		public float Scale { get; set; } = 1f;
+
 		#endregion //Properties
 
 		#region Methods
@@ -54,7 +56,7 @@ namespace BulletCircus
 			//get the location to draw at:
 			
 			//get the offset vector
-			Vector2 pos = new Vector2((Offset.X * bullet.Scale), (Offset.Y * bullet.Scale));
+			Vector2 pos = new Vector2((Offset.X * bullet.Scale * Scale), (Offset.Y * bullet.Scale * Scale));
 
 			//rotate the offset
 			var matrix = MatrixExt.Orientation(bullet.Direction);
@@ -70,11 +72,9 @@ namespace BulletCircus
 				color,
 				bullet.Direction,
 				Vector2.Zero,
-				bullet.Scale,
+				bullet.Scale * Scale,
 				SpriteEffects.None,
 				0.0f);
-
-
 		}
 
 		#endregion //Methods
