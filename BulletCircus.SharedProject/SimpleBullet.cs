@@ -1,6 +1,6 @@
 ﻿using BulletMLLib;
 using CollisionBuddy;
-using FlockBuddy;
+using FlockBuddy.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PrimitiveBuddy;

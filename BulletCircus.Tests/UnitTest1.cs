@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Moq;
 using NUnit.Framework;
 using System;
+using Shouldly;
 
 namespace BulletCircus.Tests
 {
@@ -99,10 +100,10 @@ namespace BulletCircus.Tests
 			boid.Update();
 
 			//verify everything updated
-			Assert.AreEqual(1.0f, boid.MyBoid.Position.X);
-			Assert.AreEqual(0.0f, boid.MyBoid.Position.Y);
-			Assert.AreEqual(60.0f, boid.MyBoid.Speed);
-			Assert.AreEqual(0.0f, boid.MyBoid.Rotation);
+			boid.MyBoid.Position.X.ShouldBe(1.0f);
+			boid.MyBoid.Position.Y.ShouldBe(0.0f);
+			boid.MyBoid.Speed.ShouldBe(60.0f);
+			boid.MyBoid.Rotation.ShouldBe(0.0f);
 		}
 
 		[Test]
@@ -119,10 +120,10 @@ namespace BulletCircus.Tests
 			boid.Update();
 
 			//verify everything updated
-			Assert.AreEqual(boid.Position.X, boid.MyBoid.Position.X);
-			Assert.AreEqual(boid.Position.Y, boid.MyBoid.Position.Y);
-			Assert.AreEqual(boid.Speed * 60.0f, boid.MyBoid.Speed);
-			Assert.AreEqual(boid.Direction, boid.MyBoid.Rotation);
+			boid.Position.X.ShouldBe(boid.MyBoid.Position.X);
+			boid.Position.Y.ShouldBe(boid.MyBoid.Position.Y);
+			(boid.Speed * 60.0f).ShouldBe(boid.MyBoid.Speed);
+			boid.Direction.ShouldBe(boid.MyBoid.Rotation);
 		}
 
 		[Test]
@@ -161,10 +162,10 @@ namespace BulletCircus.Tests
 			boid.Update();
 
 			//verify everything updated
-			Assert.AreEqual(boid.Position.X, boid.MyBoid.Position.X);
-			Assert.AreEqual(boid.Position.Y, boid.MyBoid.Position.Y);
-			Assert.AreEqual(boid.Speed * 60.0f, boid.MyBoid.Speed);
-			Assert.AreEqual(boid.Direction, boid.MyBoid.Rotation);
+			boid.Position.X.ShouldBe(boid.MyBoid.Position.X);
+			boid.Position.Y.ShouldBe(boid.MyBoid.Position.Y);
+			(boid.Speed * 60.0f).ShouldBe(boid.MyBoid.Speed);
+			boid.Direction.ShouldBe(boid.MyBoid.Rotation);
 		}
 	}
 }

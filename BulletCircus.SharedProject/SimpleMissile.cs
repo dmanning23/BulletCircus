@@ -1,4 +1,5 @@
 ﻿using FlockBuddy;
+using FlockBuddy.Interfaces;
 using Microsoft.Xna.Framework;
 using PrimitiveBuddy;
 using Vector2Extensions;
@@ -112,7 +113,7 @@ namespace BulletCircus
 			}
 		}
 
-		public ESummingMethod SummingMethod
+		public SummingMethod SummingMethod
 		{
 			set
 			{
@@ -213,7 +214,7 @@ namespace BulletCircus
 		}
 
 		public float Laziness { get => MyBoid.Laziness; set => MyBoid.Laziness = value; }
-		ESummingMethod IBoid.SummingMethod { get => MyBoid.SummingMethod; set => MyBoid.SummingMethod = value; }
+		SummingMethod IBoid.SummingMethod { get => MyBoid.SummingMethod; set => MyBoid.SummingMethod = value; }
 		float IBoid.RetargetTime { get => MyBoid.RetargetTime; set => MyBoid.RetargetTime = value; }
 
 		#endregion //Properties
@@ -293,7 +294,7 @@ namespace BulletCircus
 			MyBoid.AddBehavior(behavior);
 		}
 
-		public IBehavior AddBehavior(EBehaviorType behaviorType, float weight)
+		public IBehavior AddBehavior(BehaviorType behaviorType, float weight)
 		{
 			return MyBoid.AddBehavior(behaviorType, weight);
 		}
@@ -303,9 +304,14 @@ namespace BulletCircus
 			MyBoid.RemoveBehavior(behavior);
 		}
 
-		public void RemoveBehavior(EBehaviorType behaviorType)
+		public void RemoveBehavior(BehaviorType behaviorType)
 		{
 			MyBoid.RemoveBehavior(behaviorType);
+		}
+
+		public void Initialize(float mass, float minSpeed, float walkSpeed, float laziness, float maxSpeed, float maxForce, float maxTurnRate, SummingMethod summingMethod, float neighborsQueryRadius, float predatorsQueryRadius, float preyQueryRadius, float vipQueryRadius, float wallQueryRadius, float obstacleQueryRadius, float waypointQueryRadius, float retargetTime)
+		{
+			((IBoid)MyBoid).Initialize(mass, minSpeed, walkSpeed, laziness, maxSpeed, maxForce, maxTurnRate, summingMethod, neighborsQueryRadius, predatorsQueryRadius, preyQueryRadius, vipQueryRadius, wallQueryRadius, obstacleQueryRadius, waypointQueryRadius, retargetTime);
 		}
 
 		#endregion //Methods
