@@ -3,6 +3,7 @@ using FlockBuddy.Interfaces;
 using Microsoft.Xna.Framework;
 using PrimitiveBuddy;
 using Vector2Extensions;
+using System.Collections.Generic;
 
 namespace BulletCircus
 {
@@ -23,6 +24,11 @@ namespace BulletCircus
         #endregion //Members
 
         #region Properties
+
+        public Vector2 TotalForce => MyBoid.TotalForce;
+        public Vector2 DirectionForce => MyBoid.DirectionForce;
+        public Vector2 SpeedForce => MyBoid.SpeedForce;
+        public SortedDictionary<BehaviorType, IBehavior> Behaviors => MyBoid.Behaviors;
 
         /// <summary>
         /// Gets or sets the speed
@@ -276,7 +282,6 @@ namespace BulletCircus
         public override void Render(IPrimitive prim, Color color)
         {
             base.Render(prim, color);
-            MyBoid.Draw(prim, color);
         }
 
         /// <summary>
